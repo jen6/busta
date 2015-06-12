@@ -16,6 +16,7 @@ func main(){
 	m.Get("/json_test", func() string {
 		return "hello"
 	})
+
 	nw := newUser("admADin", "admDDDin", "손건D")
 	err := dbmap.Insert(&nw)
 	nb := newBus("admin", "hello", "helloworld")
@@ -23,13 +24,13 @@ func main(){
 	check_err(err, "Insert failed")
 
 	m.Post("/user/login", func() string {
-		return "use form!"
+		return "user"
 	})
+
 	m.Post("/user/login", binding.Form(user_bind{}), login)
 
 
-
-	m.RunOnAddr(":8080")
+	m.RunOnAddr(":8787")
 	m.Run()
 }
 
