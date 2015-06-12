@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;busta&gt;">
+    <CLASSES>
+      <root url="file://E:/Go/go_import/src/gopkg.in" />
+      <root url="file://E:/Go/go_import/src/github.com" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://E:/Go/go_import/src/github.com/coopernurse/gorp/.git" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://E:/Go/go_import/src/github.com/codegangsta/martini/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/codegangsta/martini-contrib/.git" />
+      <root url="file://E:/Go/go_import/src/gopkg.in/gorp.v1/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/auth/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/gorilla/sessions/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/gorilla/securecookie/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/go-sql-driver/mysql/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/gorilla/context/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/go-martini/martini/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/codegangsta/inject/.git" />
+    </excluded>
+  </library>
+</component>
