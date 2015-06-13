@@ -6,24 +6,23 @@ import (
 	"log"
 )
 
-func init(){
+func init() {
 	dbmap = make_dbmap()
 
 }
 
-func hasher(str string) string{
+func hasher(str string) string {
 	it := sha256.New()
 	hash_arr := []byte(str)
-	copy(hash_arr[:],str)
+	copy(hash_arr[:], str)
 	it.Write(hash_arr)
 	md := it.Sum(nil)
 	mdStr := hex.EncodeToString(md)
 	return mdStr
 }
 
-
-func check_err(err error, msg string){
-	if err != nil{
-		log.Fatalln(msg, err)
+func check_err(err error, msg string) {
+	if err != nil {
+		log.Println(msg, err)
 	}
 }
