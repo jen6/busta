@@ -30,7 +30,7 @@ type BUS struct {
 }
 
 func make_dbmap() *gorp.DbMap {
-	db, err := sql.Open("mysql", "root:thsrjs98@tcp(127.0.0.1:3306)/TEST")
+	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")
 	check_err(err, "db connection error")
 	log.Println("db connection Ok")
 
