@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"github.com/codegangsta/martini-contrib/sessionauth"
 	"github.com/coopernurse/gorp"
 	_ "github.com/go-sql-driver/mysql"
@@ -33,21 +32,6 @@ type user_bind struct {
 //	}
 //}
 
-func login(lg user_bind) string {
-	log.Println("login handler")
-	user := selectUser(lg.UserId)
-	log.Printf("%s %s", lg.UserId, lg.UserPw)
-	log.Printf("%s %s", user.UserId, user.UserPw)
-	if user.UserId == "" {
-		return "no User"
-	}
-	hash_pw := hasher(lg.UserPw)
-	if hash_pw == user.UserPw {
-		return "Good!"
-	} else {
-		return "Fuck!"
-	}
-}
 
 func GenerateAnonymousUser() sessionauth.User {
 	return &USER_DB{}
