@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-
+	"github.com/codegangsta/martini-contrib/sessionauth"
 	"github.com/coopernurse/gorp"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -47,4 +47,8 @@ func login(lg user_bind) string {
 	} else {
 		return "Fuck!"
 	}
+}
+
+func GenerateAnonymousUser() sessionauth.User {
+	return &USER_DB{}
 }
