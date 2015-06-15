@@ -19,7 +19,44 @@ type USER_DB struct {
 	GRADE    int
 	CLASS    int
 	NUM      int
+	authenticated bool `form:"-" db:"-"`
 }
+func (u *USER_DB) Login() {
+	// Update last login time
+	// Add to logged-in user's list
+	// etc ...
+	u.authenticated = true
+}
+
+// Logout will preform any actions that are required to completely
+// logout a user.
+func (u *USER_DB) Logout() {
+	// Remove from logged-in user's list
+	// etc ...
+	u.authenticated = false
+}
+
+func (u *USER_DB) IsAuthenticated() bool {
+	return u.authenticated
+}
+
+func (u *USER_DB) UniqueId() interface{} {
+	return u.Id
+}
+
+// GetById will populate a user object from a database model with
+// a matching id.
+func (u *USER_DB) GetById(id interface{}) error {
+	err := dbmap.SelectOne(u, "SELECT * FROM USER WHERE UserId = $1", id)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+
+
 
 type BUS struct {
 	Id      int64
