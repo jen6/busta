@@ -48,6 +48,10 @@ func main() {
 				return 
 			}
 		})
+	m.Get("/user/logout", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User) {
+		sessionauth.Logout(s, user)
+		return "logout"
+	})
 
 	m.RunOnAddr(":8989")
 }
