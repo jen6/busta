@@ -1,11 +1,12 @@
 package main
 
 import (
-	"net/http"
-	"github.com/codegangsta/martini-contrib/binding"
+	"github.com/martini-contrib/binding"
+	"github.com/martini-contrib/sessionauth"
+	"github.com/martini-contrib/sessions"
 	"github.com/go-martini/martini"
-	"github.com/codegangsta/martini-contrib/sessionauth"
-	"github.com/codegangsta/martini-contrib/sessions"
+	"net/http"
+	"github.com/martini-contrib/render"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -17,33 +18,36 @@ func main() {
 	store.Options(sessions.Options{
 		MaxAge: 0,
 	})
+	m.Use(render.Renderer())
 	m.Use(sessions.Sessions("my_session", store))
 	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
-	sessionauth.RedirectUrl = "/new-login"
+	sessionauth.RedirectUrl = "/user/login"
 	sessionauth.RedirectParam = "new-next"
-
-
 
 	m.Get("/json_test", func() string {
 		return "hello"
 	})
 
 	m.Post("/user/login", binding.Bind(user_bind{}),
-		func(session sessions.Session, lg user_bind, req *http.Request) string {
+		func(session sessions.Session, lg user_bind, r render.Render, req *http.Request) {
 			user := selectUser(lg.UserId)
 			if user.UserId == "" {
-				return "no User"
+				r.Redirect(sessionauth.RedirectUrl)
+				return 
 			}
 			hash_pw := hasher(lg.UserPw)
 			if hash_pw == user.UserPw {
 				err := sessionauth.AuthenticateSession(session, &user)
 				check_err(err, "session error")
-				return "good!"
+				params := req.URL.Query()
+				redirect := params.Get(sessionauth.RedirectParam)
+				r.Redirect(redirect)
+				return 
 
 			} else {
-				return "Fuck!"
+				return 
 			}
-	})
+		})
 
 	m.RunOnAddr(":8989")
 }

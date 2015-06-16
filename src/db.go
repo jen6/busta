@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"log"
 	"time"
-
 	"github.com/coopernurse/gorp"
 	_ "github.com/go-sql-driver/mysql"
 )
@@ -21,6 +20,7 @@ type USER_DB struct {
 	NUM      int
 	authenticated bool `form:"-" db:"-"`
 }
+
 func (u *USER_DB) Login() {
 	// Update last login time
 	// Add to logged-in user's list
@@ -47,15 +47,13 @@ func (u *USER_DB) UniqueId() interface{} {
 // GetById will populate a user object from a database model with
 // a matching id.
 func (u *USER_DB) GetById(id interface{}) error {
-	err := dbmap.SelectOne(u, "SELECT * FROM USER WHERE UserId = $1", id)
+	err := dbmap.SelectOne(u, "SELECT * FROM USER WHERE UserId = ?", id)
 	if err != nil {
 		return err
 	}
 
 	return nil
 }
-
-
 
 
 type BUS struct {

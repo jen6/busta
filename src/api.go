@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/codegangsta/martini-contrib/sessionauth"
+	"github.com/martini-contrib/sessionauth"
 	"github.com/coopernurse/gorp"
 	_ "github.com/go-sql-driver/mysql"
 )
