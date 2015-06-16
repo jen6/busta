@@ -20,7 +20,7 @@ type USER_DB struct {
 	NUM      int
 	authenticated bool `form:"-" db:"-"`
 }
-
+//TODO: 여기 주석 정리 해야할듯
 func (u *USER_DB) Login() {
 	// Update last login time
 	// Add to logged-in user's list

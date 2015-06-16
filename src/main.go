@@ -18,6 +18,7 @@ func main() {
 	store.Options(sessions.Options{
 		MaxAge: 0,
 	})
+	//TODO: m use 정리하기
 	m.Use(render.Renderer())
 	m.Use(sessions.Sessions("my_session", store))
 	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
@@ -28,6 +29,12 @@ func main() {
 		return "hello"
 	})
 
+	//	TODO:TEST확인
+	m.Get("/tester", sessionauth.LoginRequired, func(user sessionauth.User) {
+		a := user.(*USER_DB)
+		return a.UserName
+	})
+
 	m.Post("/user/login", binding.Bind(user_bind{}),
 		func(session sessions.Session, lg user_bind, r render.Render, req *http.Request) {
 			user := selectUser(lg.UserId)
@@ -35,6 +42,7 @@ func main() {
 				r.Redirect(sessionauth.RedirectUrl)
 				return 
 			}
+
 			hash_pw := hasher(lg.UserPw)
 			if hash_pw == user.UserPw {
 				err := sessionauth.AuthenticateSession(session, &user)
@@ -48,6 +56,7 @@ func main() {
 				return 
 			}
 		})
+
 	m.Get("/user/logout", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User) {
 		sessionauth.Logout(s, user)
 		return "logout"
