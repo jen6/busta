@@ -47,7 +47,8 @@ func (u *USER_DB) UniqueId() interface{} {
 // GetById will populate a user object from a database model with
 // a matching id.
 func (u *USER_DB) GetById(id interface{}) error {
-	err := dbmap.SelectOne(u, "SELECT * FROM USER WHERE UserId = ?", id)
+	log.Println(id);
+	err := dbmap.SelectOne(u, "SELECT * FROM USER WHERE Idx = ?", id)
 	if err != nil {
 		return err
 	}

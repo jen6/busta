@@ -31,7 +31,7 @@ func main() {
 	})
 
 	//	TODO:TEST확인
-	m.Get("/tester", sessionauth.LoginRequired, func(user sessionauth.User) string {
+	m.Get("/user/tester", func(user sessionauth.User) string {
 		a := user.(*USER_DB)
 		return a.UserName
 	})
