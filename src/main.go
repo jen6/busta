@@ -4,25 +4,21 @@ import (
 	"github.com/martini-contrib/binding"
 	"github.com/martini-contrib/sessionauth"
 	"github.com/martini-contrib/sessions"
-	"github.com/go-martini/martini"
+	"github.com/martini-contrib/render"
 	"net/http"
 	"log"
-	"github.com/martini-contrib/render"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func main() {
-	m := martini.Classic()
-	defer dbmap.Db.Close()
 
+	defer dbmap.Db.Close()
 	store := sessions.NewCookieStore([]byte("secret123"))
 	store.Options(sessions.Options{
 		MaxAge: 0,
 	})
-	//TODO: m use 정리하기
-	m.Use(render.Renderer())
-	m.Use(sessions.Sessions("my_session", store))
-	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
+	martini_setup(m, store)
 	sessionauth.RedirectUrl = "/user/login"
 	sessionauth.RedirectParam = "new-next"
 
@@ -30,7 +26,6 @@ func main() {
 		return "hello"
 	})
 
-	//	TODO:TEST확인
 	m.Get("/user/tester", func(user sessionauth.User) string {
 		a := user.(*USER_DB)
 		return a.UserName
@@ -61,10 +56,12 @@ func main() {
 			}
 		})
 
-		m.Get("/user/logout", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User) string {
+	m.Get("/user/logout", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User) string {
 		sessionauth.Logout(s, user)
 		return "logout"
 	})
+
+
 
 	m.RunOnAddr(":8989")
 }

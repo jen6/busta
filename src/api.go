@@ -1,13 +1,23 @@
 package main
 
 import (
+	"github.com/go-martini/martini"
 	"github.com/martini-contrib/sessionauth"
+	"github.com/martini-contrib/sessions"
+	"github.com/martini-contrib/render"
 	"github.com/coopernurse/gorp"
 	_ "github.com/go-sql-driver/mysql"
 )
 
-//db map global uses init in util.go
-var dbmap *gorp.DbMap
+
+//martini and db map global uses init in util.go
+var (
+	m martini.ClassicMartini = martini.Classic()
+	dbmap *gorp.DbMap
+)
+
+
+
 
 type user_bind struct {
 	UserId     string `form:"Id"`
@@ -15,23 +25,12 @@ type user_bind struct {
 	unexported string `form:"-"` // skip binding of unexported fields
 }
 
-//
-//func (bp user_bind) Validate(errors *binding.Errors, req *http.Request) {
-//	if req.Header.Get("X-Custom-Thing") == "" {
-//		errors.Overall["x-custom-thing"] = "The X-Custom-Thing header is required"
-//	}
-//	if len(bp.userID) < 4 {
-//		errors.Fields["title"] = "Too short; minimum 4 characters"
-//	} else if len(bp.userID) > 20 {
-//		errors.Fields["title"] = "Too long; maximum 20 characters"
-//	}
-//	if len(bp.userID) < 8 {
-//		errors.Fields["title"] = "Too short; minimum 8 characters"
-//	} else if len(bp.userID) > 20 {
-//		errors.Fields["title"] = "Too long; maximum 20 characters"
-//	}
-//}
-
+func martini_setup(m *martini.ClassicMartini, store_buf *sessions.CookieStore) {
+	//TODO: m use 정리하기
+	m.Use(render.Renderer())
+	m.Use(sessions.Sessions("my_session", store_buf))
+	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
+}
 
 func GenerateAnonymousUser() sessionauth.User {
 	return &USER_DB{}
