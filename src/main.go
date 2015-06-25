@@ -9,6 +9,7 @@ import (
 	"log"
 	_ "github.com/go-sql-driver/mysql"
 )
+//TODO 코드 테스트 해보기
 
 func main() {
 
