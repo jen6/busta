@@ -7,18 +7,13 @@ import (
 	"github.com/martini-contrib/render"
 	"net/http"
 	"log"
-
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func main() {
 
 	defer dbmap.Db.Close()
-	store := sessions.NewCookieStore([]byte("secret123"))
-	store.Options(sessions.Options{
-		MaxAge: 0,
-	})
-	martini_setup(m, store)
+
 	sessionauth.RedirectUrl = "/user/login"
 	sessionauth.RedirectParam = "new-next"
 
@@ -37,14 +32,14 @@ func main() {
 			log.Printf("login %s %s\n", user.UserId, user.UserPw)
 			if user.UserId == "" {
 				r.Redirect(sessionauth.RedirectUrl)
-				return 
+				return
 			}
 			hash_pw := hasher(lg.UserPw)
 			log.Printf("hashed : %s\n", hash_pw)
 			if hash_pw == user.UserPw {
 				err := sessionauth.AuthenticateSession(session, &user)
 				if err != nil{
-					return 
+					return
 				}
 				params := req.URL.Query()
 				redirect := params.Get(sessionauth.RedirectParam)
@@ -52,7 +47,7 @@ func main() {
 				return 
 
 			} else {
-				return 
+				return
 			}
 		})
 

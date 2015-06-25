@@ -12,10 +12,19 @@ import (
 
 //martini and db map global uses init in util.go
 var (
-	m martini.ClassicMartini = martini.Classic()
+	m *martini.ClassicMartini = martini.Classic()
 	dbmap *gorp.DbMap
 )
 
+func init() {
+	store := sessions.NewCookieStore([]byte("secret123"))
+	store.Options(sessions.Options{
+		MaxAge: 0,
+	})
+	m.Use(render.Renderer())
+	m.Use(sessions.Sessions("my_session", store))
+	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
+}
 
 
 
@@ -25,12 +34,6 @@ type user_bind struct {
 	unexported string `form:"-"` // skip binding of unexported fields
 }
 
-func martini_setup(m *martini.ClassicMartini, store_buf *sessions.CookieStore) {
-	//TODO: m use 정리하기
-	m.Use(render.Renderer())
-	m.Use(sessions.Sessions("my_session", store_buf))
-	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
-}
 
 func GenerateAnonymousUser() sessionauth.User {
 	return &USER_DB{}
