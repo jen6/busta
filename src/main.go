@@ -10,6 +10,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 //TODO 코드 테스트 해보기
+//TODO 데이터 구조 바꾸기 DB에 사용되는 구조체들에 대해 INTERFACE 빼주고 동일한 동작(SEARCH)같은 메서드 정의
 
 func main() {
 

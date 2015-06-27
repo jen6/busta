@@ -28,12 +28,6 @@ func init() {
 
 
 
-type user_bind struct {
-	UserId     string `form:"Id"`
-	UserPw     string `form:"Pw"`
-	unexported string `form:"-"` // skip binding of unexported fields
-}
-
 
 func GenerateAnonymousUser() sessionauth.User {
 	return &USER_DB{}

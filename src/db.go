@@ -56,7 +56,6 @@ func (u *USER_DB) GetById(id interface{}) error {
 	return nil
 }
 
-
 type BUS struct {
 	Id      int64
 	Created int64
@@ -108,4 +107,12 @@ func selectUser(userID string) USER_DB {
 	err := dbmap.SelectOne(&user, "select * from USER where UserId=?", userID)
 	check_err(err, "User Select Error")
 	return user
+}
+
+
+type db_struct interface {
+	search_one()
+	search_arr()
+	insert()
+	update()
 }
