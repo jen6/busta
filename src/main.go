@@ -61,8 +61,10 @@ func main() {
 	})
 
 	m.Get("/user/:name", func(params martini.Params) string {
+		var name string = params["name"]
+		log.Print(name)
 		user := user_info{
-			UserName: params["name"],
+			UserName: name,
 		}
 		var user_search USER_DB
 		user_arr := user_search.search_arr(user)
