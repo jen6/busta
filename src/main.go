@@ -69,7 +69,7 @@ func main() {
 		var user_search USER_DB
 		user_arr := user_search.search_arr(user)
 		len := len(user_arr)
-		var info_arr [len]user_info
+		info_arr := make([]user_info, len)
 		for i := 0; i < len; i++ {
 			info_arr[i].transform(user_arr[i])
 		}
