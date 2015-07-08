@@ -59,6 +59,6 @@ func (ui * user_info) transform(ud USER_DB) {
 		UserClass:ud.CLASS,
 		UserNum:ud.NUM,
 	}
-	ui = &it
+	*ui = it
 }
 
