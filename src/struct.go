@@ -48,6 +48,6 @@ func (ui user_info) make_user() USER_DB {
 }
 
 func (ui user_info) Prepare() (string, map[string]interface{}) {
-	return "SELECT * FROM USER WHERE UserName = :name", map[string]interface{}{"id" : ui.UserName}
+	return "SELECT * FROM USER WHERE UserName = :name", map[string]interface{}{"name" : ui.UserName}
 }
 
