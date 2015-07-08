@@ -1,31 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <component name="libraryTable">
   <library name="GOPATH &lt;busta&gt;">
     <CLASSES>
-      <root url="file://E:/Go/go_import/src/gopkg.in" />
       <root url="file://E:/Go/go_import/src/github.com" />
+      <root url="file://E:/Go/go_import/src/gopkg.in" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
     <excluded>
-      <root url="file://E:/Go/go_import/src/github.com/go-martini/martini/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/render/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/sessions/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/sessionauth/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/codegangsta/martini/.git" />
       <root url="file://E:/Go/go_import/src/github.com/gorilla/sessions/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/codegangsta/martini-contrib/.git" />
       <root url="file://E:/Go/go_import/src/github.com/gorilla/securecookie/.git" />
-      <root url="file://$PROJECT_DIR$" />
       <root url="file://E:/Go/go_import/src/github.com/go-sql-driver/mysql/.git" />
       <root url="file://E:/Go/go_import/src/github.com/codegangsta/inject/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/oxtoacart/bpool/.git" />
-      <root url="file://E:/Go/go_import/src/gopkg.in/gorp.v1/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/auth/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/coopernurse/gorp/.git" />
       <root url="file://E:/Go/go_import/src/github.com/martini-contrib/binding/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/oxtoacart/bpool/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/go-martini/martini/.git" />
+      <root url="file://E:/Go/go_import/src/gopkg.in/gorp.v1/.git" />
       <root url="file://E:/Go/go_import/src/github.com/garyburd/redigo/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/auth/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/render/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/coopernurse/gorp/.git" />
       <root url="file://E:/Go/go_import/src/github.com/boj/redistore/.git" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/sessions/.git" />
       <root url="file://E:/Go/go_import/src/github.com/gorilla/context/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/codegangsta/martini/.git" />
-      <root url="file://E:/Go/go_import/src/github.com/codegangsta/martini-contrib/.git" />
+      <root url="file://E:/Go/go_import/src/github.com/martini-contrib/sessionauth/.git" />
     </excluded>
   </library>
 </component>
