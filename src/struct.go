@@ -51,3 +51,14 @@ func (ui user_info) Prepare() (string, map[string]interface{}) {
 	return "SELECT * FROM USER WHERE UserName = :name", map[string]interface{}{"name" : ui.UserName}
 }
 
+func (ui * user_info) transform(ud USER_DB) {
+	it := user_info{
+		UserName:ud.UserName,
+		UserSubject:ud.SUBJECT,
+		UserGrade:ud.GRADE,
+		UserClass:ud.CLASS,
+		UserNum:ud.NUM,
+	}
+	ui = &it
+}
+

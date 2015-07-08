@@ -8,8 +8,8 @@ import (
 	"github.com/go-martini/martini"
 	"net/http"
 	"log"
-	"encoding/json"
 	_ "github.com/go-sql-driver/mysql"
+	"strconv"
 )
 //TODO 코드 테스트 해보기
 //TODO 데이터 구조 바꾸기 DB에 사용되는 구조체들에 대해 INTERFACE 빼주고 동일한 동작(SEARCH)같은 메서드 정의
@@ -68,10 +68,25 @@ func main() {
 		}
 		var user_search USER_DB
 		user_arr := user_search.search_arr(user)
-		b, _ := json.Marshal(user_arr)
-		return string(b)
+		len := len(user_arr)
+		var info_arr [len]user_info
+		for i := 0; i < len; i++ {
+			info_arr[i].transform(user_arr[i])
+		}
+		return struct2json(info_arr)
 	})
 
+	m.Post("/user/:idx", func(params martini.Params) string {
+		var buf string = params["idx"]
+		idx, err := strconv.Atoi(buf)
+		if (err!=nil) {
+			log.Print("fail to atoi")
+			return "NULL"
+		}
+		var user_search USER_DB
+		user_search.GetById(idx)
+		return struct2json(user_search)
+	})
 
 	m.RunOnAddr(":8989")
 }

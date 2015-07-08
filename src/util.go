@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/sha256"
 	"encoding/hex"
+	"encoding/json"
 	"log"
 )
 
@@ -27,3 +28,8 @@ func check_err(err error, msg string) {
 	}
 }
 
+
+func struct2json(it interface{}) string {
+	b, _ := json.Marshal(it)
+	return string(b)
+}
