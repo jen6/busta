@@ -68,16 +68,16 @@ func (u* USER_DB) search_one(ui User_Interface) {
 	query, query_map := ui.Prepare()
 	err := dbmap.SelectOne(u, query, query_map)
 	if err != nil {
-		return err
+		log.Print(err)
 	}
 }
 
 func (u* USER_DB) search_arr(ui User_Interface) []db_struct {
-	var arr []USER_DB
+	var arr []db_struct
 	query, query_map := ui.Prepare()
 	_, err := dbmap.Select(&arr, query, query_map)
 	if err != nil {
-		return err
+		log.Print(err)
 	}
 	return arr
 }
