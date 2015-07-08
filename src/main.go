@@ -5,6 +5,7 @@ import (
 	"github.com/martini-contrib/sessionauth"
 	"github.com/martini-contrib/sessions"
 	"github.com/martini-contrib/render"
+	"github.com/go-martini/martini"
 	"net/http"
 	"log"
 	_ "github.com/go-sql-driver/mysql"
@@ -23,12 +24,12 @@ func main() {
 		return "hello"
 	})
 
-	m.Get("/user/tester", func(user sessionauth.User) string {
+	m.Get("/tester", func(user sessionauth.User) string {
 		a := user.(*USER_DB)
 		return a.UserName
 	})
 
-	m.Post("/user/login", binding.Bind(user_bind{}),
+	m.Post("/login", binding.Bind(user_bind{}),
 		func(session sessions.Session, lg user_bind, r render.Render, req *http.Request) {
 			user := selectUser(lg.UserId)
 			log.Printf("login %s %s\n", user.UserId, user.UserPw)
@@ -53,11 +54,21 @@ func main() {
 			}
 		})
 
-	m.Get("/user/logout", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User) string {
+	m.Get("/logout", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User) string {
 		sessionauth.Logout(s, user)
 		return "logout"
 	})
 
+	m.Get("/user/:name", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User, params martini.Params) string {
+		user := user_info{
+			UserName: params["name"],
+		}
+
+
+
+
+		return ""
+	})
 
 
 	m.RunOnAddr(":8989")
