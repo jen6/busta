@@ -31,10 +31,10 @@ func (ub user_bind) Prepare() (string, map[string]interface{}) {
 
 type user_info struct {
 	UserName    string
-	UserSubject string
-	UserGrade   int64
-	UserClass   int64
-	UserNum     int64
+	UserSubject int
+	UserGrade   int
+	UserClass   int
+	UserNum     int
 }
 
 func (ui user_info) make_user() USER_DB {
