@@ -11,7 +11,7 @@ import (
 
 type db_struct interface {
 	search_one(User_Interface)
-	search_arr(User_Interface) []db_struct
+	search_arr(User_Interface) []interface{}
 	insert()
 	update()
 }
@@ -72,8 +72,8 @@ func (u* USER_DB) search_one(ui User_Interface) {
 	}
 }
 
-func (u* USER_DB) search_arr(ui User_Interface) []db_struct {
-	var arr []db_struct
+func (u* USER_DB) search_arr(ui User_Interface) []USER_DB {
+	var arr []USER_DB
 	query, query_map := ui.Prepare()
 	_, err := dbmap.Select(&arr, query, query_map)
 	if err != nil {
