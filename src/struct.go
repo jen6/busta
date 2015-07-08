@@ -30,7 +30,7 @@ func (ub user_bind) Prepare() (string, map[string]interface{}) {
 }
 
 type user_info struct {
-	idx         int
+	idx         int64
 	UserName    string
 	UserSubject int
 	UserGrade   int
