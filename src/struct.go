@@ -16,7 +16,7 @@ type user_bind struct {
 	unexported string `form:"-"` // skip binding of unexported fields
 }
 
-func (ub * user_bind) make_user() USER_DB {
+func (ub user_bind) make_user() USER_DB {
 	return USER_DB{
 		UserId: ub.UserId,
 		UserPw: ub.UserPw,
@@ -24,7 +24,7 @@ func (ub * user_bind) make_user() USER_DB {
 }
 
 //TODO map interface를 이용해 어떻게 쿼리를 날릴껀지 생각 해 보기
-func (ub * user_bind) Prepare() (string, map[string]interface{}) {
+func (ub user_bind) Prepare() (string, map[string]interface{}) {
 	return "SELECT * FROM USER WHERE UserId = :id AND UserPw = :pw",
 	map[string]interface{}{"id": ub.UserId, "pw":ub.UserPw}
 }
@@ -37,7 +37,7 @@ type user_info struct {
 	UserNum     int64
 }
 
-func (ui * user_info) make_user() USER_DB {
+func (ui user_info) make_user() USER_DB {
 	return USER_DB{
 		UserName:ui.UserName,
 		SUBJECT:ui.UserSubject,
@@ -47,7 +47,7 @@ func (ui * user_info) make_user() USER_DB {
 	}
 }
 
-func (ui * user_info) Prepare() (string, map[string]interface{}) {
+func (ui user_info) Prepare() (string, map[string]interface{}) {
 	return "SELECT * FROM USER WHERE UserName = :name", map[string]interface{}{"id" : ui.UserName}
 }
 
