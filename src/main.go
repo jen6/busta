@@ -8,6 +8,7 @@ import (
 	"github.com/go-martini/martini"
 	"net/http"
 	"log"
+	"encoding/json"
 	_ "github.com/go-sql-driver/mysql"
 )
 //TODO 코드 테스트 해보기
@@ -59,15 +60,14 @@ func main() {
 		return "logout"
 	})
 
-	m.Get("/user/:name", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User, params martini.Params) string {
+	m.Get("/user/:name", func(params martini.Params) string {
 		user := user_info{
 			UserName: params["name"],
 		}
-
-
-
-
-		return ""
+		var user_search USER_DB
+		user_arr := user_search.search_arr(user)
+		b, _ := json.Marshal(user_arr)
+		return string(b)
 	})
 
 

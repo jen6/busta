@@ -8,6 +8,8 @@ type User_Interface interface {
 	Prepare() (string, map[string]interface{})
 }
 
+
+
 type user_bind struct {
 	UserId     string `form:"Id"`
 	UserPw     string `form:"Pw"`

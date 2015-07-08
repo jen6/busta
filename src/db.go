@@ -8,6 +8,14 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+
+type db_struct interface {
+	search_one(User_Interface)
+	search_arr(User_Interface) []db_struct
+	insert()
+	update()
+}
+
 type USER_DB struct {
 	Id       int64 `db:"Idx"`
 	Created  int64
@@ -54,6 +62,24 @@ func (u *USER_DB) GetById(id interface{}) error {
 	}
 
 	return nil
+}
+
+func (u* USER_DB) search_one(ui User_Interface) {
+	query, query_map := ui.Prepare()
+	err := dbmap.SelectOne(u, query, query_map)
+	if err != nil {
+		return err
+	}
+}
+
+func (u* USER_DB) search_arr(ui User_Interface) []db_struct {
+	var arr []USER_DB
+	query, query_map := ui.Prepare()
+	_, err := dbmap.Select(&arr, query, query_map)
+	if err != nil {
+		return err
+	}
+	return arr
 }
 
 type BUS struct {
@@ -110,9 +136,3 @@ func selectUser(userID string) USER_DB {
 }
 
 
-type db_struct interface {
-	search_one()
-	search_arr()
-	insert()
-	update()
-}
