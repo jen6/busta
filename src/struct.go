@@ -30,6 +30,7 @@ func (ub user_bind) Prepare() (string, map[string]interface{}) {
 }
 
 type user_info struct {
+	idx         int
 	UserName    string
 	UserSubject int
 	UserGrade   int
@@ -53,6 +54,7 @@ func (ui user_info) Prepare() (string, map[string]interface{}) {
 
 func (ui * user_info) transform(ud USER_DB) {
 	it := user_info{
+		idx:ud.Id,
 		UserName:ud.UserName,
 		UserSubject:ud.SUBJECT,
 		UserGrade:ud.GRADE,
