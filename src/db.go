@@ -104,7 +104,7 @@ func (b BUS) search(bf Board_find) []BUS {
 }
 
 func (b BUS) write() {
-	err := dbmap.Insert(b)
+	err := dbmap.Insert(&b)
 	check_err(err, "error in bus write")
 }
 
