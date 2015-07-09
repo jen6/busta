@@ -1,14 +1,13 @@
 package main
 import (
 
+	"crypto/x509/pkix"
 )
 
 type User_Interface interface {
 	make_user() USER_DB
 	Prepare() (string, map[string]interface{})
 }
-
-
 
 type user_bind struct {
 	UserId     string `form:"Id"`
@@ -23,7 +22,6 @@ func (ub user_bind) make_user() USER_DB {
 	}
 }
 
-//TODO map interface를 이용해 어떻게 쿼리를 날릴껀지 생각 해 보기
 func (ub user_bind) Prepare() (string, map[string]interface{}) {
 	return "SELECT * FROM USER WHERE UserId = :id AND UserPw = :pw",
 	map[string]interface{}{"id": ub.UserId, "pw":ub.UserPw}
@@ -65,3 +63,28 @@ func (ui * user_info) transform(ud USER_DB) {
 	*ui = it
 }
 
+type BUS_Interface interface {
+	make_bus() BUS
+	Prepare() (string, map[string]interface{})
+}
+
+type bus_form struct {
+	Title   string
+	Content string
+	Want    int64
+}
+
+type bus_write struct {
+	bus_form
+	Writer string
+}
+
+func (bw bus_write) make_bus() BUS {
+	return newBus(bw.Writer, bw.Title, bw.Content)
+}
+
+type bus_info struct {
+	Id    int
+	Title string
+	Name  string
+}

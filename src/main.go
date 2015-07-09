@@ -63,7 +63,7 @@ func main() {
 		sessionauth.Logout(s, user)
 		return "logout"
 	})
-
+	//TODO 나중에 테스트 끝나면 유저 찾는부분에 세션 인증하는 부분 넣기
 	m.Get("/user/:name", func(params martini.Params) string {
 		var name string = params["name"]
 		log.Print(name)

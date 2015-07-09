@@ -88,6 +88,8 @@ type BUS struct {
 	Writer  string
 	Title   string
 	Content string
+	Want    int
+	status  int
 }
 
 func make_dbmap() *gorp.DbMap {
