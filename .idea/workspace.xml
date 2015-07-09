@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="error fix(new bus)">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="error fix(main 글쓰기post)">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.go" afterPath="$PROJECT_DIR$/src/main.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struct.go" afterPath="$PROJECT_DIR$/src/struct.go" />
     </list>
     <ignored path="BUSTA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,10 +30,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.591195">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+          <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.44596913">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="96" column="6" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
                   <folding>
                     <element signature="e#14#279#0" expanded="true" />
@@ -72,11 +72,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="struct.go" pinned="false" current-in-tab="false">
+          <file leaf-file-name="struct.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/struct.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.38936535">
+                  <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -141,9 +141,9 @@
         <option value="$PROJECT_DIR$/src/util.go" />
         <option value="$PROJECT_DIR$/src/api.go" />
         <option value="$PROJECT_DIR$/resource/db.sql" />
-        <option value="$PROJECT_DIR$/src/struct.go" />
         <option value="$PROJECT_DIR$/src/db.go" />
         <option value="$PROJECT_DIR$/src/main.go" />
+        <option value="$PROJECT_DIR$/src/struct.go" />
       </list>
     </option>
   </component>
@@ -555,7 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="error edit" />
     <MESSAGE value="check user/name" />
     <MESSAGE value="change struct user_info prepare map (id -&gt; name)" />
     <MESSAGE value="post user search by index add&#10;struct2json add" />
@@ -580,7 +579,8 @@
     <MESSAGE value="bus method search return change(interface to bus)" />
     <MESSAGE value="newbus parameter change&#10;(writer_idx to idx)" />
     <MESSAGE value="error fix(new bus)" />
-    <option name="LAST_COMMIT_MESSAGE" value="error fix(new bus)" />
+    <MESSAGE value="error fix(main 글쓰기post)" />
+    <option name="LAST_COMMIT_MESSAGE" value="error fix(main 글쓰기post)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -977,14 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/struct.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource/db.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34991422">
@@ -1003,11 +995,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44596913">
+        <state vertical-scroll-proportion="0.0">
           <caret line="96" column="6" selection-start-line="96" selection-start-column="6" selection-end-line="96" selection-end-column="6" />
           <folding>
             <element signature="e#14#279#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38936535">
+          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

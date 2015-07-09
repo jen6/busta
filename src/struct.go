@@ -81,7 +81,7 @@ type bus_write struct {
 func (bw *bus_write) transform(bf bus_form, name string, idx int64) {
 	buf := bus_write{
 		bus_form:bf,
-		Writer:bus,
+		Writer:name,
 		WriteId:idx,
 	}
 	*bw = buf
