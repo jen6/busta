@@ -85,10 +85,10 @@ type Board interface {
 type BUS struct {
 	Id       int64    `db:"Idx, primarykey, autoincrement"`
 	Created  int64
-	Writer   string    `db:",size:10"`
+	Writer   string    `db:"Writer,size:10"`
 	WriterId int64
-	Title    string    `db:",size:50"`
-	Content  string    `db:",size:50"`
+	Title    string    `db:"Title,size:50"`
+	Content  string    `db:"Content,size:50"`
 	Want     int64
 	status   int64
 }
