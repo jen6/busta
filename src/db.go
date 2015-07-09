@@ -91,7 +91,7 @@ type BUS struct {
 	Title    string    `db:"Title"`
 	Content  string    `db:"Content"`
 	Want     int64
-	status   int64
+	Status   int64
 }
 
 func (b BUS) search(bf Board_find) []BUS {
@@ -105,7 +105,7 @@ func (b BUS) search(bf Board_find) []BUS {
 }
 
 func (b* BUS) write() {
-	log.Print(reflect.TypeOf(b))
+	log.Print(reflect.TypeOf(b)) //just test code
 	err := dbmap.Insert(b)
 	check_err(err, "error in bus write")
 }
