@@ -40,6 +40,7 @@ type user_info struct {
 
 func (ui user_info) make_user() USER_DB {
 	return USER_DB{
+		Id:ui.idx,
 		UserName:ui.UserName,
 		SUBJECT:ui.UserSubject,
 		CLASS:ui.UserClass,
