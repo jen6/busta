@@ -9,13 +9,6 @@ import (
 )
 
 
-type db_struct interface {
-	search_one(User_Interface)
-	search_arr(User_Interface) []interface{}
-	insert()
-	update()
-}
-
 type USER_DB struct {
 	Id       int64 `db:"Idx"`
 	Created  int64

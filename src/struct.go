@@ -63,9 +63,15 @@ func (ui * user_info) transform(ud USER_DB) {
 	*ui = it
 }
 
-type BUS_Interface interface {
-	make_bus() BUS
-	Prepare() (string, map[string]interface{})
+type Board interface {
+	search()
+	write()
+	list()
+	update()
+}
+
+type Board_element interface{
+
 }
 
 type bus_form struct {
@@ -79,12 +85,18 @@ type bus_write struct {
 	Writer string
 }
 
-func (bw bus_write) make_bus() BUS {
-	return newBus(bw.Writer, bw.Title, bw.Content)
+func (bs bus_write) make_bus() BUS {
+	return newBus(bs.Writer, bs.Title, bs.Content)
 }
 
 type bus_info struct {
 	Id    int
 	Title string
 	Name  string
+}
+
+func (bs *bus_info) transform(bus BUS) {
+	bs.Title = bus.Title
+	bs.Id = bus.Id
+	bs.Name = bus.Writer
 }

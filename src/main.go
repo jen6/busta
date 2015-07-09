@@ -12,7 +12,6 @@ import (
 	"strconv"
 )
 //TODO 코드 테스트 해보기
-//TODO 데이터 구조 바꾸기 DB에 사용되는 구조체들에 대해 INTERFACE 빼주고 동일한 동작(SEARCH)같은 메서드 정의
 
 func main() {
 
@@ -64,6 +63,7 @@ func main() {
 		return "logout"
 	})
 	//TODO 나중에 테스트 끝나면 유저 찾는부분에 세션 인증하는 부분 넣기
+	//TODO 유저 프로필 같이 가져오는 기능 만들기
 	m.Get("/user/:name", func(params martini.Params) string {
 		var name string = params["name"]
 		log.Print(name)
@@ -95,6 +95,8 @@ func main() {
 
 		return struct2json(ui)
 	})
+
+	//메인화면 busboard
 
 	m.RunOnAddr(":8989")
 }
