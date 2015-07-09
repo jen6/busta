@@ -9,7 +9,6 @@ import (
 
 func init() {
 	dbmap = make_dbmap()
-
 }
 
 func hasher(str string) string {
@@ -33,3 +32,5 @@ func struct2json(it interface{}) string {
 	b, _ := json.Marshal(it)
 	return string(b)
 }
+
+type ANY interface{}

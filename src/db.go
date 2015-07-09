@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"time"
-	"github.com/coopernurse/gorp"
+	"gopkg.in/gorp.v1"
 	_ "github.com/go-sql-driver/mysql"
 )
 

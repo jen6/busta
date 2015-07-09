@@ -64,14 +64,14 @@ func (ui * user_info) transform(ud USER_DB) {
 }
 
 type Board interface {
-	search()
-	write()
-	list()
-	update()
+	search(bf Board_find) []ANY
+	list(idx int) []ANY
+	write(T ANY)
+	update(T ANY)
 }
 
-type Board_element interface{
-
+type Board_find interface {
+	Prepare() (string, map[string]interface{})
 }
 
 type bus_form struct {
