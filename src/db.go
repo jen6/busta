@@ -83,7 +83,7 @@ type Board interface {
 }
 
 type BUS struct {
-	Id       int64    `db:"Idx, primarykey, autoincrement"`
+	Id       int64    `db:"Idx"`
 	Created  int64
 	Writer   string    `db:"Writer"`
 	WriterId int64

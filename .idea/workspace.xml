@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="test code add">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="db setting change">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.go" afterPath="$PROJECT_DIR$/src/db.go" />
     </list>
@@ -67,8 +67,8 @@
           <file leaf-file-name="db.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/db.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.88603354">
-                  <caret line="125" column="16" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
+                <state vertical-scroll-proportion="0.24692738">
+                  <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
                   <folding>
                     <element signature="e#14#111#0" expanded="true" />
                   </folding>
@@ -623,7 +623,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="db_interface delete&#10;board interface added&#10;board_element added&#10;main fix" />
     <MESSAGE value="test push" />
     <MESSAGE value="struct.go list return any to interface{}" />
     <MESSAGE value="dbmap := to =&#10;" />
@@ -648,7 +647,8 @@
     <MESSAGE value="addtable add test code" />
     <MESSAGE value="unixnow to unixnano" />
     <MESSAGE value="test code add" />
-    <option name="LAST_COMMIT_MESSAGE" value="test code add" />
+    <MESSAGE value="db setting change" />
+    <option name="LAST_COMMIT_MESSAGE" value="db setting change" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1106,8 +1106,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88603354">
-          <caret line="125" column="16" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.24692738">
+          <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
           <folding>
             <element signature="e#14#111#0" expanded="true" />
           </folding>
