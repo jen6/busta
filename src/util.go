@@ -8,7 +8,7 @@ import (
 )
 
 func init() {
-	dbmap := make_dbmap()
+	dbmap = make_dbmap()
 }
 
 func hasher(str string) string {
