@@ -85,10 +85,10 @@ type Board interface {
 type BUS struct {
 	Id       int64    `db:"Idx, primarykey, autoincrement"`
 	Created  int64
-	Writer   string    `db:"Writer,size:10"`
+	Writer   string    `db:"Writer"`
 	WriterId int64
-	Title    string    `db:"Title,size:50"`
-	Content  string    `db:"Content,size:50"`
+	Title    string    `db:"Title"`
+	Content  string    `db:"Content"`
 	Want     int64
 	status   int64
 }
@@ -118,16 +118,20 @@ func make_dbmap() *gorp.DbMap {
 	dbmap := &gorp.DbMap{Db: db, Dialect: dialect}
 
 	AddTable(dbmap, USER_DB{}, "USER")
-	AddTable(dbmap, BUS{}, "BUSBOARD")
+	table := AddTable(dbmap, BUS{}, "BUSBOARD")
+	table.ColMap("Writer").SetMaxSize(10)
+	table.ColMap("Title").SetMaxSize(25)
+	table.ColMap("Content").SetMaxSize(50)
 	log.Println("Add Table in gorp Ok")
 	return dbmap
 }
 
-func AddTable(dbmap *gorp.DbMap, it interface{}, name string) {
+func AddTable(dbmap *gorp.DbMap, it interface{}, name string) *gorp.TableMap {
 	var table *gorp.TableMap = dbmap.AddTableWithName(it, name).SetKeys(true, "Id")
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
 	log.Print(table.TableName)
+	return table
 }
 
 func newUser(id, pw, name string) USER_DB {
