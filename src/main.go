@@ -104,6 +104,7 @@ func main() {
 			u := user.(*USER_DB)
 			bw.transform(bf, u.UserName, u.Id)
 			bus := bw.make_bus()
+			log.Print(struct2json(bus))
 			bus.write()
 			return "OK"
 		})
