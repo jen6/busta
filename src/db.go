@@ -83,12 +83,12 @@ type Board interface {
 }
 
 type BUS struct {
-	Id       int64
+	Id       int64    `db:"Idx, primarykey, autoincrement"`
 	Created  int64
-	Writer   string
+	Writer   string    `db:",size:10"`
 	WriterId int64
-	Title    string
-	Content  string
+	Title    string    `db:",size:50"`
+	Content  string    `db:",size:50"`
 	Want     int64
 	status   int64
 }
@@ -103,8 +103,8 @@ func (b BUS) search(bf Board_find) []BUS {
 	return arr
 }
 
-func (b BUS) write() {
-	err := dbmap.Insert(&b)
+func (b* BUS) write() {
+	err := dbmap.Insert(b)
 	check_err(err, "error in bus write")
 }
 
