@@ -14,11 +14,11 @@ CREATE TABLE BUSBOARD (
   	Id 	INT AUTO_INCREMENT PRIMARY KEY,
   	Created BIGINT,
   	Writer VARCHAR(10) NOT NULL,
-  	WriterId INT,
+  	WriterId BIGINT,
   	Title  VARCHAR(20),
   	Content VARCHAR(50),
-  	Want INT,
-  	status INT
+  	Want BIGINT,
+  	status BIGINT
 );
 
 CREATE TABLE PROFILE (
