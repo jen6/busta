@@ -85,7 +85,11 @@ func main() {
 		}
 		var user_search USER_DB
 		user_search.GetById(idx)
-		return struct2json(user_search)
+
+		var ui user_info
+		ui.transform(user_search)
+
+		return struct2json(ui)
 	})
 
 	m.RunOnAddr(":8989")
