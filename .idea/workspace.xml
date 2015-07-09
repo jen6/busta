@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="bus add db settings">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="addtable add test code">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.go" afterPath="$PROJECT_DIR$/src/db.go" />
     </list>
@@ -67,8 +67,8 @@
           <file leaf-file-name="db.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/db.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.550838">
-                  <caret line="137" column="23" selection-start-line="137" selection-start-column="23" selection-end-line="137" selection-end-column="23" />
+                <state vertical-scroll-proportion="0.6078212">
+                  <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
                   <folding>
                     <element signature="e#14#111#0" expanded="true" />
                   </folding>
@@ -623,7 +623,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="post user/idx return change USER_DB to user_info" />
     <MESSAGE value="session auth redirect url change" />
     <MESSAGE value="bus_form bus_write bus_info added &#10;db busboard change (want , status added)" />
     <MESSAGE value="db_interface delete&#10;board interface added&#10;board_element added&#10;main fix" />
@@ -648,7 +647,8 @@
     <MESSAGE value="recovery delete" />
     <MESSAGE value="newbus and newUser time unixnano" />
     <MESSAGE value="bus add db settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="bus add db settings" />
+    <MESSAGE value="addtable add test code" />
+    <option name="LAST_COMMIT_MESSAGE" value="addtable add test code" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1106,8 +1106,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.550838">
-          <caret line="137" column="23" selection-start-line="137" selection-start-column="23" selection-end-line="137" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.6078212">
+          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding>
             <element signature="e#14#111#0" expanded="true" />
           </folding>

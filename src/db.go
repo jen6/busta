@@ -124,10 +124,10 @@ func make_dbmap() *gorp.DbMap {
 }
 
 func AddTable(dbmap *gorp.DbMap, it interface{}, name string) {
-	table := dbmap.AddTableWithName(it, name).SetKeys(true, "Id")
+	var table *gorp.TableMap = dbmap.AddTableWithName(it, name).SetKeys(true, "Id")
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
-	log.Print(table.Tablename)
+	log.Print(table.TableName)
 }
 
 func newUser(id, pw, name string) USER_DB {
