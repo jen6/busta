@@ -24,6 +24,7 @@ func init() {
 	m.Use(render.Renderer())
 	m.Use(sessions.Sessions("my_session", store))
 	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
+	m.Use(martini.Static("test"))
 }
 
 func GenerateAnonymousUser() sessionauth.User {
