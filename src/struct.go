@@ -63,8 +63,8 @@ func (ui * user_info) transform(ud USER_DB) {
 }
 
 type Board interface {
-	search(bf Board_find) []ANY
-	list(idx int) []ANY
+	search(bf Board_find) []interface{}
+	list(idx int) []interface{}
 	write(T ANY)
 	update(T ANY)
 }
