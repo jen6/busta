@@ -18,8 +18,12 @@ func main() {
 
 	defer dbmap.Db.Close()
 
-	sessionauth.RedirectUrl = "/user/login"
-	sessionauth.RedirectParam = "new-next"
+	sessionauth.RedirectUrl = "/user/session_needs"
+	sessionauth.RedirectParam = ""
+
+	m.Get("/user/session_needs", func() string {
+		return "NULL"
+	})
 
 	m.Get("/json_test", func() string {
 		return "hello"
