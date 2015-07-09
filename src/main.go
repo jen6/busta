@@ -6,8 +6,8 @@ import (
 	"github.com/martini-contrib/sessions"
 	"github.com/martini-contrib/render"
 	"github.com/go-martini/martini"
-	"net/http"
 	"log"
+	"net/http"
 	_ "github.com/go-sql-driver/mysql"
 	"strconv"
 )
@@ -45,13 +45,13 @@ func main() {
 			log.Printf("hashed : %s\n", hash_pw)
 			if hash_pw == user.UserPw {
 				err := sessionauth.AuthenticateSession(session, &user)
-				if err != nil{
+				if err != nil {
 					return
 				}
 				params := req.URL.Query()
 				redirect := params.Get(sessionauth.RedirectParam)
 				r.Redirect(redirect)
-				return 
+				return
 
 			} else {
 				return
@@ -97,6 +97,13 @@ func main() {
 	})
 
 	//메인화면 busboard
-
+	//TODO post글쓰기 테스트 하기
+	m.post("/board/bus", binding.Bind(bus_form{}), sessionauth.LoginRequired,
+		func(s sessions.Session, user sessionauth.User, bf bus_form) string {
+			var bw bus_write
+			u := user.(*USER_DB)
+			bw.transform(bf, u.UserName, u.Id)
+			return "Ok"
+		})
 	m.RunOnAddr(":8989")
 }

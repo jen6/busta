@@ -10,15 +10,15 @@ import (
 
 
 type USER_DB struct {
-	Id       int64 `db:"Idx"`
-	Created  int64
-	UserId   string
-	UserPw   string
-	UserName string
-	SUBJECT  int
-	GRADE    int
-	CLASS    int
-	NUM      int
+	Id            int64 `db:"Idx"`
+	Created       int64
+	UserId        string
+	UserPw        string
+	UserName      string
+	SUBJECT       int
+	GRADE         int
+	CLASS         int
+	NUM           int
 	authenticated bool `form:"-" db:"-"`
 }
 //TODO: 여기 주석 정리 해야할듯
@@ -75,15 +75,34 @@ func (u* USER_DB) search_arr(ui User_Interface) []USER_DB {
 	return arr
 }
 
-type BUS struct {
-	Id      int64
-	Created int64
-	Writer  string
-	Title   string
-	Content string
-	Want    int
-	status  int
+type Board interface {
+	search(bf Board_find) []interface{}
+	list(idx int) []interface{}
+	write(T ANY)
+	update(T ANY)
 }
+
+type BUS struct {
+	Id       int64
+	Created  int64
+	Writer   string
+	WriterId int64
+	Title    string
+	Content  string
+	Want     int
+	status   int
+}
+
+func (b BUS) search(bf Board_find) []interface{} {
+	var arr []BUS
+	query, query_map := bf.Prepare()
+	_, err := dbmap.Select(&arr, query, query_map)
+	if err != nil {
+		log.Print(err)
+	}
+	return arr
+}
+
 
 func make_dbmap() *gorp.DbMap {
 	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")
@@ -114,10 +133,11 @@ func newUser(id, pw, name string) USER_DB {
 	}
 }
 
-func newBus(write, title, content string) BUS {
+func newBus(writer_idx int64, write, title, content string) BUS {
 	return BUS{
 		Created: time.Now().Unix(),
 		Writer:  write,
+		writer_idx:writer_idx,
 		Title:   title,
 		Content: content,
 	}

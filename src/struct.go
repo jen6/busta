@@ -62,30 +62,33 @@ func (ui * user_info) transform(ud USER_DB) {
 	*ui = it
 }
 
-type Board interface {
-	search(bf Board_find) []interface{}
-	list(idx int) []interface{}
-	write(T ANY)
-	update(T ANY)
-}
-
 type Board_find interface {
 	Prepare() (string, map[string]interface{})
 }
 
 type bus_form struct {
-	Title   string
-	Content string
-	Want    int64
+	Title   string        `form:"Title"`
+	Content string        `form:"Content"`
+	Want    int64        `form:"Want"`
 }
 
 type bus_write struct {
 	bus_form
-	Writer string
+	Writer  string
+	WriteId int64
+}
+
+func (bw *bus_write) transform(bf bus_form, name string, idx int64) {
+	buf := bus_write{
+		bus_form:bf,
+		Writer:bus,
+		WriteId:idx,
+	}
+	*bw = buf
 }
 
 func (bs bus_write) make_bus() BUS {
-	return newBus(bs.Writer, bs.Title, bs.Content)
+	return newBus(bs.WriteId, bs.Writer, bs.Title, bs.Content)
 }
 
 type bus_info struct {
