@@ -137,7 +137,7 @@ func newBus(idx int64, write, title, content string) BUS {
 	return BUS{
 		Created: time.Now().Unix(),
 		Writer:  write,
-		writer_idx:idx,
+		WriterId:idx,
 		Title:   title,
 		Content: content,
 	}
