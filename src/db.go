@@ -132,7 +132,7 @@ func AddTable(dbmap *gorp.DbMap, it interface{}, name string) {
 
 func newUser(id, pw, name string) USER_DB {
 	return USER_DB{
-		Created:  time.Now().UnixNow(),
+		Created:  time.Now().UnixNano(),
 		UserId:   id,
 		UserPw:   hasher(pw),
 		UserName: name,
@@ -142,7 +142,7 @@ func newUser(id, pw, name string) USER_DB {
 func newBus(idx int64, write, title, content string) BUS {
 	return BUS{
 		Id:0,
-		Created: time.Now().UnixNow(),
+		Created: time.Now().UnixNano(),
 		Writer:  write,
 		WriterId:idx,
 		Title:   title,
