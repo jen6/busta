@@ -34,7 +34,7 @@
             <entry file="file://$PROJECT_DIR$/src/main.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+                  <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
                   <folding>
                     <element signature="e#14#279#0" expanded="true" />
                   </folding>
@@ -67,10 +67,10 @@
           <file leaf-file-name="db.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/db.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.24692738">
-                  <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
+                <state vertical-scroll-proportion="0.449162">
+                  <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
                   <folding>
-                    <element signature="e#14#111#0" expanded="true" />
+                    <element signature="e#14#122#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -684,7 +684,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -729,7 +729,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,7 +774,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -819,7 +819,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="88" column="5" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -864,7 +864,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -909,7 +909,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -954,7 +954,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -999,7 +999,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1060,18 +1060,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/struct.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource/db.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6078212">
           <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/struct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1097,7 +1097,7 @@
     <entry file="file://$PROJECT_DIR$/src/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="24" />
+          <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
           <folding>
             <element signature="e#14#279#0" expanded="true" />
           </folding>
@@ -1106,10 +1106,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24692738">
-          <caret line="85" column="30" selection-start-line="85" selection-start-column="30" selection-end-line="85" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.449162">
+          <caret line="107" column="29" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
           <folding>
-            <element signature="e#14#111#0" expanded="true" />
+            <element signature="e#14#122#0" expanded="true" />
           </folding>
         </state>
       </provider>

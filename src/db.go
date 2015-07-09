@@ -6,6 +6,7 @@ import (
 	"time"
 	"gopkg.in/gorp.v1"
 	_ "github.com/go-sql-driver/mysql"
+	"reflect"
 )
 
 
@@ -104,6 +105,7 @@ func (b BUS) search(bf Board_find) []BUS {
 }
 
 func (b* BUS) write() {
+	log.Print(reflect.TypeOf(b))
 	err := dbmap.Insert(b)
 	check_err(err, "error in bus write")
 }
@@ -131,6 +133,7 @@ func AddTable(dbmap *gorp.DbMap, it interface{}, name string) *gorp.TableMap {
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
 	log.Print(table.TableName)
+	log.Print(reflect.TypeOf(it))
 	return table
 }
 
