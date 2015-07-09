@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="bus_write added&#10;bus form added&#10;bus 글쓰기 추가">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="bus method search return change(interface to bus)">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.go" afterPath="$PROJECT_DIR$/src/db.go" />
     </list>
@@ -65,8 +65,8 @@
           <file leaf-file-name="db.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/db.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.93310463">
-                  <caret line="102" column="14" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
+                <state vertical-scroll-proportion="0.41680962">
+                  <caret line="139" column="19" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -555,7 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="ADD TODO&#10;struct.go userinterface added and info structure added" />
     <MESSAGE value="url 변경, user찾기 구현중" />
     <MESSAGE value="user get marshal needs test" />
     <MESSAGE value="error edit" />
@@ -580,7 +579,8 @@
     <MESSAGE value="change dbmap var" />
     <MESSAGE value="api.go change &quot;gopkg.in/gorp.v1&quot;" />
     <MESSAGE value="bus_write added&#10;bus form added&#10;bus 글쓰기 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="bus_write added&#10;bus form added&#10;bus 글쓰기 추가" />
+    <MESSAGE value="bus method search return change(interface to bus)" />
+    <option name="LAST_COMMIT_MESSAGE" value="bus method search return change(interface to bus)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1005,8 +1005,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93310463">
-          <caret line="102" column="14" selection-start-line="102" selection-start-column="14" selection-end-line="102" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.41680962">
+          <caret line="139" column="19" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="19" />
           <folding />
         </state>
       </provider>
