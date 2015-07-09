@@ -103,6 +103,11 @@ func (b BUS) search(bf Board_find) []BUS {
 	return arr
 }
 
+func (b BUS) write() {
+	err := dbmap.Insert(&b)
+	check_err(err, "error in bus write")
+}
+
 
 func make_dbmap() *gorp.DbMap {
 	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")

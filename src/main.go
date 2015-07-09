@@ -103,7 +103,9 @@ func main() {
 			var bw bus_write
 			u := user.(*USER_DB)
 			bw.transform(bf, u.UserName, u.Id)
-			return "Ok"
+			bus := bw.make_bus()
+			bus.write()
+			return "OK"
 		})
 	m.RunOnAddr(":8989")
 }
