@@ -5,11 +5,12 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"log"
-	"gopkg.in/gorp.v1"
+
 )
 
-var dbmap *gorp.DbMap = make_dbmap()
-
+func init() {
+	dbmap = make_dbmap()
+}
 
 func hasher(str string) string {
 	it := sha256.New()
@@ -18,7 +19,6 @@ func hasher(str string) string {
 	it.Write(hash_arr)
 	md := it.Sum(nil)
 	mdStr := hex.EncodeToString(md)
-
 	return mdStr
 }
 

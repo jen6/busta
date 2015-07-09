@@ -5,7 +5,7 @@ import (
 	"github.com/martini-contrib/sessionauth"
 	"github.com/martini-contrib/sessions"
 	"github.com/martini-contrib/render"
-	"github.com/coopernurse/gorp"
+	"gopkg.in/gorp.v1"
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -25,9 +25,6 @@ func init() {
 	m.Use(sessions.Sessions("my_session", store))
 	m.Use(sessionauth.SessionUser(GenerateAnonymousUser))
 }
-
-
-
 
 func GenerateAnonymousUser() sessionauth.User {
 	return &USER_DB{}
