@@ -1,7 +1,6 @@
 package main
 import (
 
-	"crypto/x509/pkix"
 )
 
 type User_Interface interface {
@@ -90,7 +89,7 @@ func (bs bus_write) make_bus() BUS {
 }
 
 type bus_info struct {
-	Id    int
+	Id    int64
 	Title string
 	Name  string
 }
