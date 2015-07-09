@@ -93,7 +93,7 @@ type BUS struct {
 	status   int
 }
 
-func (b BUS) search(bf Board_find) []interface{} {
+func (b BUS) search(bf Board_find) []BUS {
 	var arr []BUS
 	query, query_map := bf.Prepare()
 	_, err := dbmap.Select(&arr, query, query_map)
