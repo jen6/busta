@@ -30,7 +30,7 @@ func (ub user_bind) Prepare() (string, map[string]interface{}) {
 }
 
 type user_info struct {
-	idx         int64
+	Id          int64
 	UserName    string
 	UserSubject int
 	UserGrade   int
@@ -40,7 +40,7 @@ type user_info struct {
 
 func (ui user_info) make_user() USER_DB {
 	return USER_DB{
-		Id:ui.idx,
+		Id:ui.Id,
 		UserName:ui.UserName,
 		SUBJECT:ui.UserSubject,
 		CLASS:ui.UserClass,
@@ -55,7 +55,7 @@ func (ui user_info) Prepare() (string, map[string]interface{}) {
 
 func (ui * user_info) transform(ud USER_DB) {
 	it := user_info{
-		idx:ud.Id,
+		Id:ud.Id,
 		UserName:ud.UserName,
 		UserSubject:ud.SUBJECT,
 		UserGrade:ud.GRADE,
