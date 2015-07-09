@@ -72,6 +72,8 @@ func main() {
 		info_arr := make([]user_info, len)
 		for i := 0; i < len; i++ {
 			info_arr[i].transform(user_arr[i])
+			log.Print(info_arr[i].idx)
+			//test code
 		}
 		return struct2json(info_arr)
 	})
