@@ -98,7 +98,7 @@ func main() {
 
 	//메인화면 busboard
 	//TODO post글쓰기 테스트 하기
-	m.post("/board/bus", binding.Bind(bus_form{}), sessionauth.LoginRequired,
+	m.Post("/board/bus", binding.Bind(bus_form{}), sessionauth.LoginRequired,
 		func(s sessions.Session, user sessionauth.User, bf bus_form) string {
 			var bw bus_write
 			u := user.(*USER_DB)
