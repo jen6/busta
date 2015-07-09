@@ -89,8 +89,8 @@ type BUS struct {
 	WriterId int64
 	Title    string
 	Content  string
-	Want     int
-	status   int
+	Want     int64
+	status   int64
 }
 
 func (b BUS) search(bf Board_find) []BUS {
