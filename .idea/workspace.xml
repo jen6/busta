@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="board/bus/idx parameter change (onepage int to int64)">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="calc limitpage change to int64">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.go" afterPath="$PROJECT_DIR$/src/db.go" />
     </list>
@@ -63,8 +63,8 @@
           <file leaf-file-name="db.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/db.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.41680962">
-                  <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.62092626">
+                  <caret line="130" column="51" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -617,7 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="newbus parameter change&#10;(writer_idx to idx)" />
     <MESSAGE value="error fix(new bus)" />
     <MESSAGE value="error fix(main 글쓰기post)" />
     <MESSAGE value="error fix(bus write)" />
@@ -642,7 +641,8 @@
     <MESSAGE value="board/bus/idx add" />
     <MESSAGE value="board/bus/idx error fix" />
     <MESSAGE value="board/bus/idx parameter change (onepage int to int64)" />
-    <option name="LAST_COMMIT_MESSAGE" value="board/bus/idx parameter change (onepage int to int64)" />
+    <MESSAGE value="calc limitpage change to int64" />
+    <option name="LAST_COMMIT_MESSAGE" value="calc limitpage change to int64" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1045,8 +1045,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41680962">
-          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.62092626">
+          <caret line="130" column="51" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="51" />
           <folding />
         </state>
       </provider>

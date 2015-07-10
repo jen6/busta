@@ -110,7 +110,7 @@ func (b* BUS) write() {
 	check_err(err, "error in bus write")
 }
 
-func calc_limitPage(onepage int64, count int64, idx int) error {
+func calc_limitPage(onepage int64, count int64, idx int64) error {
 	var total_page int64
 	if count%onepage == 0 {
 		total_page = count/onepage
@@ -128,7 +128,7 @@ func (b BUS) list(idx int) ([]BUS, error) {
 	const onePage int64 = 5
 	count, err := dbmap.SelectInt("select count(*) from BUSBOARD where Status = 0")
 	check_err(err, "error in count busboard")
-	err = calc_limitPage(onePage, count, idx)
+	err = calc_limitPage(onePage, count, int64(idx))
 	if err != nil {
 		return []BUS{}, errors.New("invaild idx")
 	}
