@@ -117,8 +117,6 @@ func main() {
 			bi := make([]bus_info, len)
 			for i := 0; i < len; i++ {
 				bi[i].transform(arr[i])
-				log.Print(bi[i].Title)
-				log.Print(arr[i].Title)
 			}
 			return struct2json(bi)
 		})

@@ -103,5 +103,7 @@ func (bs *bus_info) transform(bus BUS) {
 		Id: bus.Id,
 		Name:bus.Writer,
 	}
+	log.Print(bus.Title)
 	*bs = buf
+	log.Print(bs.Title)
 }
