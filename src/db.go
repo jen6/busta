@@ -6,7 +6,6 @@ import (
 	"time"
 	"gopkg.in/gorp.v1"
 	_ "github.com/go-sql-driver/mysql"
-	"reflect"
 	"errors"
 )
 
