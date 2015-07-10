@@ -112,6 +112,10 @@ func (b* BUS) write() {
 
 func calc_limitPage(onepage int64, count int64, idx int64) error {
 	var total_page int64
+	if idx == 0 {
+		return errors.New("invaild busboard idx")
+	}
+
 	if count%onepage == 0 {
 		total_page = count/onepage
 	} else {
@@ -135,7 +139,7 @@ func (b BUS) list(idx int) ([]BUS, error) {
 		return []BUS{}, errors.New("invaild idx")
 	}
 	var arr []BUS
-	_, err = dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc limit ?, 5", idx64*onePage-1)
+	_, err = dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc limit ?, 5", (idx64-1)*onePage)
 	if err != nil {
 		return []BUS{}, errors.New("fail in select busboard")
 	}
