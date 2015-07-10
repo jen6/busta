@@ -132,7 +132,6 @@ func (b BUS) list(idx int) ([]BUS, error) {
 	const onePage int64 = 5
 	idx64 := int64(idx)
 	count, err := dbmap.SelectInt("select count(*) from BUSBOARD where Status = 0")
-	log.Printf("idx : %d\ncount : %d\n", idx64, count)
 	check_err(err, "error in count busboard")
 	err = calc_limitPage(onePage, count, idx64)
 	if err != nil {
@@ -168,8 +167,6 @@ func AddTable(dbmap *gorp.DbMap, it interface{}, name string) *gorp.TableMap {
 	var table *gorp.TableMap = dbmap.AddTableWithName(it, name).SetKeys(true, "Id")
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
-	log.Print(table.TableName)
-	log.Print(reflect.TypeOf(it))
 	return table
 }
 
