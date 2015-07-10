@@ -98,7 +98,7 @@ func main() {
 
 	//메인화면 busboard
 
-	m.Get("/board/bus/:idx", sessionauth.LoginRequired,
+	m.Get("/board/buslist/:idx", sessionauth.LoginRequired,
 		func(params martini.Params) string {
 			var idx_str string
 			idx_str = params["idx"]
@@ -120,7 +120,14 @@ func main() {
 			}
 			return struct2json(bi)
 		})
-
+	m.Get("/board/bus/:arg", sessionauth.LoginRequired,
+		func(param martini.Params) string {
+			var buf string = param["arg"]
+			id,_ := strconv.Atoi(buf)
+			var bus BUS
+			bus.view(int64(id))
+			return struct2json(bus)
+		})
 	m.Post("/board/bus", binding.Bind(bus_form{}), sessionauth.LoginRequired,
 		func(s sessions.Session, user sessionauth.User, bf bus_form) string {
 			var bw bus_write

@@ -104,6 +104,11 @@ func (b BUS) search(bf Board_find) []BUS {
 	return arr
 }
 
+func (b *BUS) view(id int64) {
+	err := dbmap.SelectOne(b, "select * from BUSBOARD where Idx = ?", id)
+	check_err(err, "error in view bus")
+}
+
 func (b* BUS) write() {
 	err := dbmap.Insert(b)
 	check_err(err, "error in bus write")
