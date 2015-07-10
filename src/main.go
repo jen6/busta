@@ -126,6 +126,9 @@ func main() {
 			id,_ := strconv.Atoi(buf)
 			var bus BUS
 			bus.view(int64(id))
+			if bus.Id == 0 {
+				return "0"
+			}
 			return struct2json(bus)
 		})
 	m.Post("/board/bus", binding.Bind(bus_form{}), sessionauth.LoginRequired,
