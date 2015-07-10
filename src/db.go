@@ -126,14 +126,15 @@ func calc_limitPage(onepage int64, count int64, idx int64) error {
 
 func (b BUS) list(idx int) ([]BUS, error) {
 	const onePage int64 = 5
+	idx64 := int64(idx)
 	count, err := dbmap.SelectInt("select count(*) from BUSBOARD where Status = 0")
 	check_err(err, "error in count busboard")
-	err = calc_limitPage(onePage, count, int64(idx))
+	err = calc_limitPage(onePage, count, idx64)
 	if err != nil {
 		return []BUS{}, errors.New("invaild idx")
 	}
 	var arr []BUS
-	_, err = dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc limit ?, 5", idx*onePage-1)
+	_, err = dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc limit ?, 5", idx64*onePage-1)
 	if err != nil {
 		return []BUS{}, errors.New("fail in select busboard")
 	}
