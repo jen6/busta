@@ -64,6 +64,7 @@ func main() {
 	})
 	//TODO 나중에 테스트 끝나면 유저 찾는부분에 세션 인증하는 부분 넣기
 	//TODO 유저 프로필 같이 가져오는 기능 만들기
+	//TODO 리턴 문자열 따로 파일에 정리하기
 	m.Get("/user/:name", func(params martini.Params) string {
 		var name string = params["name"]
 		log.Print(name)
@@ -139,7 +140,26 @@ func main() {
 			bus := bw.make_bus()
 			log.Print(struct2json(bus))
 			bus.write()
-			return "OK"
+			return "1"
+		})
+	m.Update("/board/bus/:arg", sessionauth.LoginRequired,
+		func(s session.Session, user sessionauth.User, param martini.Params) string {
+			var buf string
+			buf = param["arg"]
+			id, _ := strconv.Atoi(buf)
+			var bus BUS
+			bus.view(int64(id))
+			if bus.Id == 0 {
+				return "0"
+			}
+			u := user.(*USER_DB)
+			if bus.WriterId != u.Id {
+				return "0"
+			}
+
+			bus.Status = 1
+			bus.update()
+			return "1"
 		})
 	m.RunOnAddr(":8989")
 }

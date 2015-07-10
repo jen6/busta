@@ -149,6 +149,10 @@ func (b BUS) list(idx int) ([]BUS, error) {
 	return arr, nil
 }
 
+func (b * BUS) update() {
+	_, err := dbmap.Update(b)
+	check_err(err, "error in bus update")
+}
 
 func make_dbmap() *gorp.DbMap {
 	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")
