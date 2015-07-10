@@ -128,6 +128,7 @@ func (b BUS) list(idx int) ([]BUS, error) {
 	const onePage int64 = 5
 	idx64 := int64(idx)
 	count, err := dbmap.SelectInt("select count(*) from BUSBOARD where Status = 0")
+	log.Print(count)
 	check_err(err, "error in count busboard")
 	err = calc_limitPage(onePage, count, idx64)
 	if err != nil {
