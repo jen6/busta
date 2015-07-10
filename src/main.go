@@ -142,8 +142,8 @@ func main() {
 			bus.write()
 			return "1"
 		})
-	m.Update("/board/bus/:arg", sessionauth.LoginRequired,
-		func(s session.Session, user sessionauth.User, param martini.Params) string {
+	m.Put("/board/bus/:arg", sessionauth.LoginRequired,
+		func(s sessions.Session, user sessionauth.User, param martini.Params) string {
 			var buf string
 			buf = param["arg"]
 			id, _ := strconv.Atoi(buf)
