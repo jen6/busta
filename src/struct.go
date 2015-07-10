@@ -88,7 +88,7 @@ func (bw *bus_write) transform(bf bus_form, name string, idx int64) {
 }
 
 func (bs bus_write) make_bus() BUS {
-	return newBus(bs.WriteId, bs.Writer, bs.Title, bs.Content)
+	return newBus(bs.WriteId, bs.Want, bs.Writer, bs.Title, bs.Content)
 }
 
 type bus_info struct {

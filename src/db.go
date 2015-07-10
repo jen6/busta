@@ -146,7 +146,7 @@ func newUser(id, pw, name string) USER_DB {
 	}
 }
 
-func newBus(idx int64, write, title, content string) BUS {
+func newBus(idx, want int64, write, title, content string) BUS {
 	return BUS{
 		Id:0,
 		Created: time.Now().UnixNano(),
@@ -154,6 +154,7 @@ func newBus(idx int64, write, title, content string) BUS {
 		WriterId:idx,
 		Title:   title,
 		Content: content,
+		Want: want,
 	}
 }
 
