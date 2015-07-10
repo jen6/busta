@@ -100,7 +100,25 @@ func main() {
 
 	m.Get("/board/bus/:idx", sessionauth.LoginRequired,
 		func(params martini.Params) string {
-
+			var idx_str string
+			idx_str = params["idx"]
+			idx, err := strconv.Atoi(idx_str)
+			if (err!=nil) {
+				log.Print("fail to atoi")
+				return "0"
+			}
+			var bus BUS
+			arr, err := bus.list(idx)
+			if (err!=nil) {
+				log.Print(err)
+				return "0"
+			}
+			len := len(arr)
+			bi := make([]bus_info, len)
+			for i := 0; i < len; i++ {
+				bi[i].transform(arr[i])
+			}
+			return struct2json(bi)
 		})
 
 	m.Post("/board/bus", binding.Bind(bus_form{}), sessionauth.LoginRequired,
