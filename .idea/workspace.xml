@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="board/bus/idx add">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="board/bus/idx error fix">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.go" afterPath="$PROJECT_DIR$/src/db.go" />
     </list>
@@ -64,7 +64,7 @@
             <entry file="file://$PROJECT_DIR$/src/db.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.50428814">
-                  <caret line="135" column="7" selection-start-line="135" selection-start-column="7" selection-end-line="135" selection-end-column="7" />
+                  <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -617,7 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <MESSAGE value="bus_write added&#10;bus form added&#10;bus 글쓰기 추가" />
     <MESSAGE value="bus method search return change(interface to bus)" />
     <MESSAGE value="newbus parameter change&#10;(writer_idx to idx)" />
     <MESSAGE value="error fix(new bus)" />
@@ -642,7 +641,8 @@
     <MESSAGE value="newbus parameter want add" />
     <MESSAGE value="bus list added &#10;function calc_limitPage add" />
     <MESSAGE value="board/bus/idx add" />
-    <option name="LAST_COMMIT_MESSAGE" value="board/bus/idx add" />
+    <MESSAGE value="board/bus/idx error fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="board/bus/idx error fix" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1046,7 +1046,7 @@
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50428814">
-          <caret line="135" column="7" selection-start-line="135" selection-start-column="7" selection-end-line="135" selection-end-column="7" />
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding />
         </state>
       </provider>

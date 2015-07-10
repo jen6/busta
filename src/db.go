@@ -112,10 +112,10 @@ func (b* BUS) write() {
 
 func calc_limitPage(onepage int, count int64, idx int) error {
 	var total_page int
-	if count%onepage == 0 {
-		total_page = count/onepage
+	if count%int64(onepage) == 0 {
+		total_page = count/int64(onepage)
 	} else {
-		total_page = count/onepage + 1
+		total_page = count/int64(onepage) + 1
 	}
 
 	if idx > total_page || idx < 0 {
