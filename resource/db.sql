@@ -18,7 +18,7 @@ CREATE TABLE BUSBOARD (
   	Title  VARCHAR(20),
   	Content VARCHAR(50),
   	Want INT,
-  	status INT
+  	Status INT
 );
 
 CREATE TABLE PROFILE (

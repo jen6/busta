@@ -7,6 +7,7 @@ import (
 	"gopkg.in/gorp.v1"
 	_ "github.com/go-sql-driver/mysql"
 	"reflect"
+	"errors"
 )
 
 
@@ -78,7 +79,7 @@ func (u* USER_DB) search_arr(ui User_Interface) []USER_DB {
 
 type Board interface {
 	search(bf Board_find) []interface{}
-	list(idx int) []interface{}
+	list(idx int) ([]interface{}, error)
 	write(T ANY)
 	update(T ANY)
 }
@@ -105,9 +106,35 @@ func (b BUS) search(bf Board_find) []BUS {
 }
 
 func (b* BUS) write() {
-	log.Print(reflect.TypeOf(b)) //just test code
 	err := dbmap.Insert(b)
 	check_err(err, "error in bus write")
+}
+
+func calc_limitPage(onepage, count, idx int) error {
+	var total_page int
+	if count%onepage == 0 {
+		total_page = count/onepage
+	} else {
+		total_page = count/onepage + 1
+	}
+
+	if idx > total_page || idx < 0 {
+		return errors.New("invaild busboard idx")
+	}
+	return nil
+}
+
+func (b BUS) list(idx int) ([]BUS, error) {
+	const onePage int = 5
+	count, err := dbmap.SelectInt("select count(*) from BUSBOARD where Status = 0")
+	check_err(err, "error in count busboard")
+	err = calc_limitPage(onePage, count, idx)
+	if err != nil {
+		return []BUS{}, errors.New("invaild idx")
+	}
+
+
+
 }
 
 

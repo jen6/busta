@@ -98,7 +98,10 @@ type bus_info struct {
 }
 
 func (bs *bus_info) transform(bus BUS) {
-	bs.Title = bus.Title
-	bs.Id = bus.Id
-	bs.Name = bus.Writer
+	buf := bus_info{
+		Title: bus.Title,
+		Id: bus.Id,
+		Name:bus.Writer,
+	}
+	*bs = buf
 }
