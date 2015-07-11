@@ -99,7 +99,29 @@ func main() {
 
 	//메인화면 busboard
 
-	m.Get("/board/buslist/:idx", sessionauth.LoginRequired,
+	//	m.Get("/board/buslist/:idx", sessionauth.LoginRequired,
+	//		func(params martini.Params) string {
+	//			var idx_str string
+	//			idx_str = params["idx"]
+	//			idx, err := strconv.Atoi(idx_str)
+	//			if (err!=nil) {
+	//				log.Print("fail to atoi")
+	//				return "0"
+	//			}
+	//			var bus BUS
+	//			arr, err := bus.list(idx)
+	//			if (err!=nil) {
+	//				log.Print(err)
+	//				return "0"
+	//			}
+	//			len := len(arr)
+	//			bi := make([]bus_info, len)
+	//			for i := 0; i < len; i++ {
+	//				bi[i].transform(arr[i])
+	//			}
+	//			return struct2json(bi)
+	//		})
+	m.Get("/board/buslist/:idx",
 		func(params martini.Params) string {
 			var idx_str string
 			idx_str = params["idx"]
@@ -121,7 +143,7 @@ func main() {
 			}
 			return struct2json(bi)
 		})
-	m.Get("/board/bus/:arg", sessionauth.LoginRequired,
+	m.Get("/board/bus/:arg",
 		func(param martini.Params) string {
 			var buf string = param["arg"]
 			id,_ := strconv.Atoi(buf)
