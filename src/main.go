@@ -100,7 +100,10 @@ func main() {
 	//	유저정보
 	m.Get("/profile/:arg", func(params martini.Params) string {
 		var buf string = params["idx"]
-		//		TODO 구현하기
+		user_idx, _ := strconv.Atoi(buf)
+		up := USER_PROFILE{}
+		up.Get(int64(user_idx))
+		return struct2json(up)
 	})
 
 	//메인화면 busboard
