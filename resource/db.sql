@@ -27,7 +27,8 @@ CREATE TABLE PROFILE (
 	Id VARCHAR(10),
 	Best VARCHAR(50),
 	Can VARCHAR(50),
-	intro VARCHAR(50),
+	Intro VARCHAR(50),
+	Award varchar(50)
 );
 
 CREATE TABLE PORTFOLIO (

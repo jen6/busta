@@ -91,16 +91,22 @@ func (bs bus_write) make_bus() BUS {
 }
 
 type bus_info struct {
-	Id    int64
-	Title string
-	Name  string
+	Id      int64
+	Title   string
+	Content string
 }
 
 func (bs *bus_info) transform(bus BUS) {
+	var bus_content string
+	if len(bus.Content) > 30 {
+		bus_content = bus.Content[0:30]
+	} else {
+		bus_content = bus.Content
+	}
 	buf := bus_info{
 		Title: bus.Title,
 		Id: bus.Id,
-		Name:bus.Writer,
+		Content:bus_content,
 	}
 	*bs = buf
 }

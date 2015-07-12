@@ -49,12 +49,10 @@ func (u *USER_DB) UniqueId() interface{} {
 // GetById will populate a user object from a database model with
 // a matching id.
 func (u *USER_DB) GetById(id interface{}) error {
-	log.Println(id);
 	err := dbmap.SelectOne(u, "SELECT * FROM USER WHERE Idx = ?", id)
 	if err != nil {
 		return err
 	}
-
 	return nil
 }
 
@@ -154,6 +152,22 @@ func (b * BUS) update() {
 	check_err(err, "error in bus update")
 }
 
+type PROFILE struct {
+	Id    int64
+	Best  string
+	Can   string
+	Intro string
+}
+
+func (p * PROFILE) Get(WriterIdx int64) error {
+	err := dbmap.SelectOne(p, "SELECT * FROM PROFILE WHERE WriterId = ?", WiterIdx)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+
 func make_dbmap() *gorp.DbMap {
 	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")
 	check_err(err, "db connection error")
@@ -162,17 +176,18 @@ func make_dbmap() *gorp.DbMap {
 	dialect := gorp.MySQLDialect{"InnoDB", "UTF8"}
 	dbmap := &gorp.DbMap{Db: db, Dialect: dialect}
 
-	AddTable(dbmap, USER_DB{}, "USER")
-	table := AddTable(dbmap, BUS{}, "BUSBOARD")
+	AddTable(true, USER_DB{}, "USER")
+	table := AddTable(true, BUS{}, "BUSBOARD")
 	table.ColMap("Writer").SetMaxSize(10)
 	table.ColMap("Title").SetMaxSize(25)
 	table.ColMap("Content").SetMaxSize(50)
+	AddTable(flase, PROFILE{}, "PROFILE")
 	log.Println("Add Table in gorp Ok")
 	return dbmap
 }
 
-func AddTable(dbmap *gorp.DbMap, it interface{}, name string) *gorp.TableMap {
-	var table *gorp.TableMap = dbmap.AddTableWithName(it, name).SetKeys(true, "Id")
+func AddTable(auto_inc boolean, it interface{}, name string) *gorp.TableMap {
+	var table *gorp.TableMap = dbmap.AddTableWithName(it, name).SetKeys(auto_inc, "Id")
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
 	return table
@@ -205,5 +220,3 @@ func selectUser(userID string) USER_DB {
 	check_err(err, "User Select Error")
 	return user
 }
-
-
