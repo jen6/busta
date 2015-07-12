@@ -68,7 +68,7 @@ type Board_find interface {
 type bus_form struct {
 	Title   string        `form:"Title"`
 	Content string        `form:"Content"`
-	Want    int64        `form:"Want"`
+	Want    int64         `form:"Want"`
 }
 
 type bus_write struct {
@@ -110,3 +110,27 @@ func (bs *bus_info) transform(bus BUS) {
 	}
 	*bs = buf
 }
+
+type USER_PROFILE struct {
+	user_info
+	PROFILE
+}
+
+func (up * USER_PROFILE) Get(UserIdx int64) {
+	var (
+		ud USER_DB
+		ui user_info
+		pf PROFILE
+	)
+
+	ud.search_one(UserIdx)
+	ui.transform(ud)
+	pf.Get(UserIdx)
+
+	buf := USER_PROFILE{
+		user_info:ui,
+		PROFILE:pf,
+	}
+	*up = buf
+}
+
