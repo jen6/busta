@@ -157,6 +157,7 @@ type PROFILE struct {
 	Best  string
 	Can   string
 	Intro string
+	Image string
 }
 
 func (p * PROFILE) Get(WriterIdx int64) error {
@@ -165,6 +166,15 @@ func (p * PROFILE) Get(WriterIdx int64) error {
 		return err
 	}
 	return nil
+}
+
+type PORTFOLIO struct {
+	Id       int64
+	Created  int64
+	WriterId int64
+	Writer   string
+	Content  string
+	Image    string
 }
 
 
