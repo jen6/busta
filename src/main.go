@@ -97,6 +97,12 @@ func main() {
 		return struct2json(ui)
 	})
 
+	//	유저정보
+	m.Get("/profile/:arg", func(params martini.Params) string {
+		var buf string = params["idx"]
+		//		TODO 구현하기
+	})
+
 	//메인화면 busboard
 
 	//	m.Get("/board/buslist/:idx", sessionauth.LoginRequired,
