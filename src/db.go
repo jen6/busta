@@ -190,13 +190,15 @@ func make_dbmap() *gorp.DbMap {
 	//userdb add
 	AddTable(true, USER_DB{}, "USER")
 	//busboard add
+	log.Print("Check user")
 	table := AddTable(true, BUS{}, "BUSBOARD")
 	table.ColMap("Writer").SetMaxSize(10)
 	table.ColMap("Title").SetMaxSize(25)
 	table.ColMap("Content").SetMaxSize(50)
+	log.Print("Check bus")
 	//profile add
-	log.Print("Check")
 	AddTable(false, PROFILE{}, "PROFILE")
+	log.Print("Check profile")
 	//portfolio add
 	table = AddTable(true, PORTFOLIO{}, "PORTFOLIO")
 	table.ColMap("Writer").SetMaxSize(10)
