@@ -186,7 +186,7 @@ func make_dbmap() *gorp.DbMap {
 
 	dialect := gorp.MySQLDialect{"InnoDB", "UTF8"}
 	dbmap_buf := &gorp.DbMap{Db: db, Dialect: dialect}
-
+	log.Print("dbmap check")
 	//userdb add
 	AddTable(dbmap_buf, true, USER_DB{}, "USER")
 	//busboard add
