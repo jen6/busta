@@ -123,7 +123,7 @@ func (up * USER_PROFILE) Get(UserIdx int64) {
 		pf PROFILE
 	)
 
-	ud.search_one(UserIdx)
+	ud.GetById(UserIdx)
 	ui.transform(ud)
 	pf.Get(UserIdx)
 

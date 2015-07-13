@@ -160,7 +160,7 @@ type PROFILE struct {
 }
 
 func (p * PROFILE) Get(WriterIdx int64) error {
-	err := dbmap.SelectOne(p, "SELECT * FROM PROFILE WHERE WriterId = ?", WiterIdx)
+	err := dbmap.SelectOne(p, "SELECT * FROM PROFILE WHERE WriterId = ?", WriterIdx)
 	if err != nil {
 		return err
 	}
@@ -195,7 +195,7 @@ func make_dbmap() *gorp.DbMap {
 	table.ColMap("Title").SetMaxSize(25)
 	table.ColMap("Content").SetMaxSize(50)
 	//profile add
-	AddTable(flase, PROFILE{}, "PROFILE")
+	AddTable(false, PROFILE{}, "PROFILE")
 	//portfolio add
 	table = AddTable(true, PORTFOLIO{}, "PORTFOLIO")
 	table.ColMap("Writer").SetMaxSize(10)
@@ -204,7 +204,7 @@ func make_dbmap() *gorp.DbMap {
 	return dbmap
 }
 
-func AddTable(auto_inc boolean, it interface{}, name string) *gorp.TableMap {
+func AddTable(auto_inc bool, it interface{}, name string) *gorp.TableMap {
 	var table *gorp.TableMap = dbmap.AddTableWithName(it, name).SetKeys(auto_inc, "Id")
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
