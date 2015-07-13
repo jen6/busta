@@ -165,7 +165,7 @@ type PROFILE struct {
 }
 
 func (p * PROFILE) Get(WriterIdx int64) error {
-	err := dbmap.SelectOne(p, "SELECT * FROM PROFILE WHERE WriterId = ?", WriterIdx)
+	err := dbmap.SelectOne(p, "SELECT * FROM PROFILE WHERE Id = ?", WriterIdx)
 	if err != nil {
 		return err
 	}
