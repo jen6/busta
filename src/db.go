@@ -9,7 +9,6 @@ import (
 	"errors"
 )
 
-
 type USER_DB struct {
 	Id            int64 `db:"Idx"`
 	Created       int64
@@ -178,6 +177,8 @@ type PORTFOLIO struct {
 }
 
 
+
+
 func make_dbmap() *gorp.DbMap {
 	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")
 	check_err(err, "db connection error")
@@ -186,13 +187,20 @@ func make_dbmap() *gorp.DbMap {
 	dialect := gorp.MySQLDialect{"InnoDB", "UTF8"}
 	dbmap := &gorp.DbMap{Db: db, Dialect: dialect}
 
+	//userdb add
 	AddTable(true, USER_DB{}, "USER")
+	//busboard add
 	table := AddTable(true, BUS{}, "BUSBOARD")
 	table.ColMap("Writer").SetMaxSize(10)
 	table.ColMap("Title").SetMaxSize(25)
 	table.ColMap("Content").SetMaxSize(50)
+	//profile add
 	AddTable(flase, PROFILE{}, "PROFILE")
+	//portfolio add
+	table = AddTable(true, PORTFOLIO{}, "PORTFOLIO")
+	table.ColMap("Writer").SetMaxSize(10)
 	log.Println("Add Table in gorp Ok")
+
 	return dbmap
 }
 
@@ -224,6 +232,16 @@ func newBus(idx, want int64, write, title, content string) BUS {
 	}
 }
 
+func newPorfolio(WriterId int64, writer, content, image string) PORTFOLIO {
+	return PORTFOLIO{
+		Id:0,
+		Created: time.Now().UnixNano(),
+		Writer: writer,
+		WriterId: WriterId,
+		Content: content,
+		Image: image,
+	}
+}
 func selectUser(userID string) USER_DB {
 	var user USER_DB
 	err := dbmap.SelectOne(&user, "select * from USER where UserId=?", userID)
