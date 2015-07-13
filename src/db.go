@@ -185,29 +185,29 @@ func make_dbmap() *gorp.DbMap {
 	log.Println("db connection Ok")
 
 	dialect := gorp.MySQLDialect{"InnoDB", "UTF8"}
-	dbmap := &gorp.DbMap{Db: db, Dialect: dialect}
+	dbmap_buf := &gorp.DbMap{Db: db, Dialect: dialect}
 
 	//userdb add
-	AddTable(true, USER_DB{}, "USER")
+	AddTable(dbmap_buf, true, USER_DB{}, "USER")
 	//busboard add
 	log.Print("Check user")
-	table := AddTable(true, BUS{}, "BUSBOARD")
+	table := AddTable(dbmap_buf, true, BUS{}, "BUSBOARD")
 	table.ColMap("Writer").SetMaxSize(10)
 	table.ColMap("Title").SetMaxSize(25)
 	table.ColMap("Content").SetMaxSize(50)
 	log.Print("Check bus")
 	//profile add
-	AddTable(false, PROFILE{}, "PROFILE")
+	AddTable(dbmap_buf, false, PROFILE{}, "PROFILE")
 	log.Print("Check profile")
 	//portfolio add
-	table = AddTable(true, PORTFOLIO{}, "PORTFOLIO")
+	table = AddTable(dbmap_buf, true, PORTFOLIO{}, "PORTFOLIO")
 	table.ColMap("Writer").SetMaxSize(10)
 	log.Println("Add Table in gorp Ok")
 
-	return dbmap
+	return dbmap_buf
 }
 
-func AddTable(auto_inc bool, it interface{}, name string) *gorp.TableMap {
+func AddTable(dbmap_buf *gorp.DbMap, auto_inc bool, it interface{}, name string) *gorp.TableMap {
 	var table *gorp.TableMap = dbmap.AddTableWithName(it, name).SetKeys(auto_inc, "Id")
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
