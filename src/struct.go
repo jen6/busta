@@ -94,6 +94,7 @@ type bus_info struct {
 	Id      int64
 	Title   string
 	Content string
+	Want    int64
 }
 
 func (bs *bus_info) transform(bus BUS) {
@@ -107,6 +108,7 @@ func (bs *bus_info) transform(bus BUS) {
 		Title: bus.Title,
 		Id: bus.Id,
 		Content:bus_content,
+		Want: bus.Want,
 	}
 	*bs = buf
 }
