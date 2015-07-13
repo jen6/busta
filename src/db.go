@@ -73,6 +73,11 @@ func (u* USER_DB) search_arr(ui User_Interface) []USER_DB {
 	return arr
 }
 
+func (u* USER_DB) insert() {
+	err := dbmap.Insert(u);
+	check_err(err, "error in insert user")
+}
+
 type Board interface {
 	search(bf Board_find) []interface{}
 	list(idx int) ([]interface{}, error)

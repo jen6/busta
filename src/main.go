@@ -19,7 +19,7 @@ func main() {
 
 	sessionauth.RedirectUrl = "/user/session_needs"
 	sessionauth.RedirectParam = ""
-
+	addmysqldata()
 	m.Get("/user/session_needs", func() string {
 		return "NULL"
 	})

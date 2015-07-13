@@ -34,4 +34,16 @@ func struct2json(it interface{}) string {
 	return string(b)
 }
 
+func addmysqldata() {
+	ui := user_info{
+		UserName:"손건",
+	}
+	ud := USER_DB{}
+	ud.search_one(ui)
+	if ud.Id == 0 {
+		ud = newUser("jen6", "abcd", "손건")
+	}
+	ud.insert()
+}
+
 type ANY interface{}
