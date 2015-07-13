@@ -172,6 +172,13 @@ func (p * PROFILE) Get(WriterIdx int64) error {
 	return nil
 }
 
+//type Board interface {
+//	search(bf Board_find) []interface{}
+//	list(idx int) ([]interface{}, error)
+//	write(T ANY)
+//	update(T ANY)
+//}
+
 type PORTFOLIO struct {
 	Id       int64
 	Created  int64
@@ -180,6 +187,18 @@ type PORTFOLIO struct {
 	Content  string
 	Image    string
 }
+
+func (pf * PORTFOLIO) write() {
+	err := dbmap.Insert(pf)
+	check_err(err, "error in insert portfolio")
+}
+
+func (pf * PORTFOLIO) view(id int64) {
+	err := dbmap.SelectOne(pf, "SELECT * FROM PORTFOLIO WHERE Id = ?", id)
+	check_err(err, "error in view porfol")
+}
+
+
 
 func make_dbmap() *gorp.DbMap {
 	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")
