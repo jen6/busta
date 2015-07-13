@@ -134,17 +134,18 @@ func calc_limitPage(onepage int64, count int64, idx int64) error {
 	return nil
 }
 
-func (b BUS) list(idx int) ([]BUS, error) {
-	const onePage int64 = 5
-	idx64 := int64(idx)
-	count, err := dbmap.SelectInt("select count(*) from BUSBOARD where Status = 0")
-	check_err(err, "error in count busboard")
-	err = calc_limitPage(onePage, count, idx64)
-	if err != nil {
-		return []BUS{}, errors.New("invaild idx")
-	}
+func (b BUS) list() ([]BUS, error) {
+	//	TODO 나중에 리스트 형식으로 다시 구현하기..
+	//	const onePage int64 = 5
+	//	idx64 := int64(idx)
+	//	count, err := dbmap.SelectInt("select count(*) from BUSBOARD where Status = 0")
+	//	check_err(err, "error in count busboard")
+	//	err = calc_limitPage(onePage, count, idx64)
+	//	if err != nil {
+	//		return []BUS{}, errors.New("invaild idx")
+	//	}
 	var arr []BUS
-	_, err = dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc limit ?, 5", (idx64-1)*onePage)
+	_, err = dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc")
 	if err != nil {
 		return []BUS{}, errors.New("fail in select busboard")
 	}

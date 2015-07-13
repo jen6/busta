@@ -139,7 +139,9 @@ func main() {
 				return fail_str
 			}
 			var bus BUS
-			arr, err := bus.list(idx)
+			log.Print(idx)
+			//			TODO bus list수정
+			arr, err := bus.list()
 			if (err!=nil) {
 				log.Print(err)
 				return fail_str
