@@ -195,6 +195,7 @@ func make_dbmap() *gorp.DbMap {
 	table.ColMap("Title").SetMaxSize(25)
 	table.ColMap("Content").SetMaxSize(50)
 	//profile add
+	log.Print("Check")
 	AddTable(false, PROFILE{}, "PROFILE")
 	//portfolio add
 	table = AddTable(true, PORTFOLIO{}, "PORTFOLIO")
