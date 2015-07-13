@@ -145,7 +145,7 @@ func (b BUS) list() ([]BUS, error) {
 	//		return []BUS{}, errors.New("invaild idx")
 	//	}
 	var arr []BUS
-	_, err = dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc")
+	_, err := dbmap.Select(&arr, "select * from BUSBOARD where Status = 0 order by Created desc")
 	if err != nil {
 		return []BUS{}, errors.New("fail in select busboard")
 	}

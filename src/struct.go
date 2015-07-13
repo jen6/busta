@@ -1,10 +1,10 @@
 package main
-import (
-	"mime/multipart"
-	"hash/crc32"
-	"os"
-	"errors"
-)
+//import (
+//	"mime/multipart"
+//	"hash/crc32"
+//	"os"
+//	"errors"
+//)
 
 type User_Interface interface {
 	make_user() USER_DB
