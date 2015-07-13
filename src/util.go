@@ -42,8 +42,9 @@ func addmysqldata() {
 	ud.search_one(ui)
 	if ud.Id == 0 {
 		ud = newUser("jen6", "abcd", "손건")
+		ud.insert()
 	}
-	ud.insert()
+
 }
 
 type ANY interface{}
