@@ -34,27 +34,23 @@ func main() {
 	})
 
 	m.Post("/login", binding.Bind(user_bind{}),
-		func(session sessions.Session, lg user_bind, r render.Render, req *http.Request) {
+		func(session sessions.Session, lg user_bind, req *http.Request) string {
 			user := selectUser(lg.UserId)
 			log.Printf("login %s %s\n", user.UserId, user.UserPw)
 			if user.UserId == "" {
-				r.Redirect(sessionauth.RedirectUrl)
-				return
+				return "0"
 			}
 			hash_pw := hasher(lg.UserPw)
 			log.Printf("hashed : %s\n", hash_pw)
 			if hash_pw == user.UserPw {
 				err := sessionauth.AuthenticateSession(session, &user)
 				if err != nil {
-					return
+					return "0"
 				}
-				params := req.URL.Query()
-				redirect := params.Get(sessionauth.RedirectParam)
-				r.Redirect(redirect)
-				return
+				return "1"
 
 			} else {
-				return
+				return "0"
 			}
 		})
 
