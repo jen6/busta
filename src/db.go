@@ -181,9 +181,6 @@ type PORTFOLIO struct {
 	Image    string
 }
 
-
-
-
 func make_dbmap() *gorp.DbMap {
 	db, err := sql.Open("mysql", "tester:tester@tcp(127.0.0.1:3306)/TEST")
 	check_err(err, "db connection error")
@@ -191,20 +188,15 @@ func make_dbmap() *gorp.DbMap {
 
 	dialect := gorp.MySQLDialect{"InnoDB", "UTF8"}
 	dbmap_buf := &gorp.DbMap{Db: db, Dialect: dialect}
-	log.Print("dbmap check")
-	//userdb add
+
 	AddTable(dbmap_buf, true, USER_DB{}, "USER")
-	//busboard add
-	log.Print("Check user")
+
 	table := AddTable(dbmap_buf, true, BUS{}, "BUSBOARD")
 	table.ColMap("Writer").SetMaxSize(10)
 	table.ColMap("Title").SetMaxSize(25)
 	table.ColMap("Content").SetMaxSize(50)
-	log.Print("Check bus")
-	//profile add
+
 	AddTable(dbmap_buf, false, PROFILE{}, "PROFILE")
-	log.Print("Check profile")
-	//portfolio add
 	table = AddTable(dbmap_buf, true, PORTFOLIO{}, "PORTFOLIO")
 	table.ColMap("Writer").SetMaxSize(10)
 	log.Println("Add Table in gorp Ok")
