@@ -99,10 +99,9 @@ func main() {
 
 	//	유저정보
 	m.Get("/profile/:arg", func(params martini.Params) string {
-		var buf string = params["idx"]
+		var buf string = params["arg"]
 		user_idx, _ := strconv.Atoi(buf)
 		up := USER_PROFILE{}
-		log.Printf("profile request %d", user_idx)
 		up.Get(int64(user_idx))
 		return struct2json(up)
 	})
