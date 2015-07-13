@@ -140,10 +140,10 @@ func (up * USER_PROFILE) Get(UserIdx int64) {
 	*up = buf
 }
 
-type portfolio_form struct {
-	Content string                    `form:"Content"`
-	Image   *multipart.FileHeader    `form:"Image"`
-}
+//type portfolio_form struct {
+//	Content string                    `form:"Content"`
+//	Image   *multipart.FileHeader    `form:"Image"`
+//}
 
 //func (pf portfolio_form) save_image() (string, error) {
 //	file, _ := pf.Image.Open()
