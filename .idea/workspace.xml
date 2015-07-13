@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="error fix add table dbmap  to dbmap_buf&#10;">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="test code add">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.go" afterPath="$PROJECT_DIR$/src/db.go" />
     </list>
@@ -63,8 +63,8 @@
           <file leaf-file-name="db.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/db.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.69394433">
-                  <caret line="211" column="20" selection-start-line="211" selection-start-column="20" selection-end-line="211" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.6661211">
+                  <caret line="210" column="91" selection-start-line="210" selection-start-column="91" selection-end-line="210" selection-end-column="91" />
                   <folding />
                 </state>
               </provider>
@@ -663,9 +663,9 @@
     <MESSAGE value="portfolio table add" />
     <MESSAGE value="error fix" />
     <MESSAGE value="error fix add table add dbmap_buf" />
-    <MESSAGE value="test code add" />
     <MESSAGE value="error fix add table dbmap  to dbmap_buf&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="error fix add table dbmap  to dbmap_buf&#10;" />
+    <MESSAGE value="test code add" />
+    <option name="LAST_COMMIT_MESSAGE" value="test code add" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1068,8 +1068,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69394433">
-          <caret line="211" column="20" selection-start-line="211" selection-start-column="20" selection-end-line="211" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.6661211">
+          <caret line="210" column="91" selection-start-line="210" selection-start-column="91" selection-end-line="210" selection-end-column="91" />
           <folding />
         </state>
       </provider>
