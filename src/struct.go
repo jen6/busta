@@ -1,5 +1,9 @@
 package main
 import (
+	"mime/multipart"
+	"hash/crc32"
+	"os"
+	"errors"
 )
 
 type User_Interface interface {
@@ -134,5 +138,31 @@ func (up * USER_PROFILE) Get(UserIdx int64) {
 		PROFILE:pf,
 	}
 	*up = buf
+}
+
+type portfolio_form struct {
+	Content string `form:"Content"`
+	Image   *multipart.FileHeader  `form:"Image"`
+}
+
+func (pf portfolio_form) save_image() (string, error) {
+	file, _ := pf.Image.Open()
+	arr := []byte(pf.Image.Filename)
+
+	table := crc32.MakeTable(0x90abcde3)
+	hash := crc32.New(table)
+	hash_filename := string(hash.Write(arr)) + ".jpg"
+
+	dst, err := os.Create("./var/busta/image/" + hash_filename)
+	if err != nil {
+		return "", errors.New("error in make Image")
+	}
+	defer dst.Close()
+
+	if _, err := io.Copy(dst, file); err != nil {
+		return "", errors.New("error in save Image")
+	}
+
+	return "http://makeall.ml:8989/Image/"+hash_filename, nil
 }
 

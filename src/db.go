@@ -242,6 +242,7 @@ func newPorfolio(WriterId int64, writer, content, image string) PORTFOLIO {
 		Image: image,
 	}
 }
+
 func selectUser(userID string) USER_DB {
 	var user USER_DB
 	err := dbmap.SelectOne(&user, "select * from USER where UserId=?", userID)
