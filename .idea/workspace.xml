@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="for mocon test">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="bug fix">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.go" afterPath="$PROJECT_DIR$/src/db.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.go" afterPath="$PROJECT_DIR$/src/main.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struct.go" afterPath="$PROJECT_DIR$/src/struct.go" />
     </list>
     <ignored path="BUSTA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +34,8 @@
           <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8663102">
-                  <caret line="168" column="28" selection-start-line="168" selection-start-column="28" selection-end-line="169" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.43636364">
+                  <caret line="194" column="10" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -75,7 +75,7 @@
             <entry file="file://$PROJECT_DIR$/src/struct.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+                  <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -136,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/api.go" />
         <option value="$PROJECT_DIR$/resource/db.sql" />
         <option value="$PROJECT_DIR$/src/util.go" />
-        <option value="$PROJECT_DIR$/src/struct.go" />
         <option value="$PROJECT_DIR$/src/db.go" />
+        <option value="$PROJECT_DIR$/src/struct.go" />
         <option value="$PROJECT_DIR$/src/main.go" />
       </list>
     </option>
@@ -648,7 +648,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="BUS UPDATE ADD&#10;UPDATE /board/bus/ard add" />
     <MESSAGE value="error fix in put /board/bus/:arg" />
     <MESSAGE value="main 세션필요없는건 일단 지워둠 나중에 다시 추가하기" />
     <MESSAGE value="bus info change&#10;userdb log del&#10;struct profile add method get add" />
@@ -673,7 +672,8 @@
     <MESSAGE value="portfolio form add (with save_image method)" />
     <MESSAGE value="profol view add" />
     <MESSAGE value="for mocon test" />
-    <option name="LAST_COMMIT_MESSAGE" value="for mocon test" />
+    <MESSAGE value="buslist fix(전체 한번에 불러옴)" />
+    <option name="LAST_COMMIT_MESSAGE" value="buslist fix(전체 한번에 불러옴)" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1058,14 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/struct.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/db.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1074,10 +1066,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/struct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8663102">
-          <caret line="168" column="28" selection-start-line="168" selection-start-column="28" selection-end-line="169" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.43636364">
+          <caret line="194" column="10" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
           <folding />
         </state>
       </provider>

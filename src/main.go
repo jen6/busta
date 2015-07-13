@@ -194,26 +194,26 @@ func main() {
 			return success_str
 		})
 
-	m.Get("/board/porfol/:arg", func(param martini.Params) string {
-		var buf string = param["arg"]
-		id, _ := strconv.Atoi(buf)
-		pf := PORTFOLIO{}
-		pf.view(id)
-		return struct2json(pf)
-	})
-
-	m.Post("/board/porfol", sessionauth.LoginRequired, binding.MultipartForm(portfolio_form{}),
-		func(s sessions.Session, user sessionauth.User, pf portfolio_form) string {
-			image, err := pf.save_image()
-			if err != nil {
-				log.Print(err)
-				return fail_str
-			}
-			u := user.(*USER_DB)
-			portfolio := newPorfolio(u.Id, u.UserName, pf.Content, image)
-			portfolio.write()
-			return success_str
-		})
+	//	m.Get("/board/porfol/:arg", func(param martini.Params) string {
+	//		var buf string = param["arg"]
+	//		id, _ := strconv.Atoi(buf)
+	//		pf := PORTFOLIO{}
+	//		pf.view(int64(id))
+	//		return struct2json(pf)
+	//	})
+	//
+	//	m.Post("/board/porfol", sessionauth.LoginRequired, binding.MultipartForm(portfolio_form{}),
+	//		func(s sessions.Session, user sessionauth.User, pf portfolio_form) string {
+	//			image, err := pf.save_image()
+	//			if err != nil {
+	//				log.Print(err)
+	//				return fail_str
+	//			}
+	//			u := user.(*USER_DB)
+	//			portfolio := newPorfolio(u.Id, u.UserName, pf.Content, image)
+	//			portfolio.write()
+	//			return success_str
+	//		})
 
 	m.RunOnAddr(":8989")
 }
