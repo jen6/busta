@@ -14,6 +14,11 @@ import (
 
 func main() {
 
+	const (
+		success_str = "1"
+		fail_str = "0"
+	)
+
 	defer dbmap.Db.Close()
 
 	sessionauth.RedirectUrl = "/user/session_needs"
@@ -37,29 +42,28 @@ func main() {
 			user := selectUser(lg.UserId)
 			log.Printf("login %s %s\n", user.UserId, user.UserPw)
 			if user.UserId == "" {
-				return "0"
+				return fail_str
 			}
 			hash_pw := hasher(lg.UserPw)
 			log.Printf("hashed : %s\n", hash_pw)
 			if hash_pw == user.UserPw {
 				err := sessionauth.AuthenticateSession(session, &user)
 				if err != nil {
-					return "0"
+					return fail_str
 				}
-				return "1"
+				return success_str
 
 			} else {
-				return "0"
+				return fail_str
 			}
 		})
 
 	m.Get("/logout", sessionauth.LoginRequired, func(s sessions.Session, user sessionauth.User) string {
 		sessionauth.Logout(s, user)
-		return "logout"
+		return success_str
 	})
 	//TODO 나중에 테스트 끝나면 유저 찾는부분에 세션 인증하는 부분 넣기
 	//TODO 유저 프로필 같이 가져오는 기능 만들기
-	//TODO 리턴 문자열 따로 파일에 정리하기
 	m.Get("/user/:name", func(params martini.Params) string {
 		var name string = params["name"]
 		log.Print(name)
@@ -132,13 +136,13 @@ func main() {
 			idx, err := strconv.Atoi(idx_str)
 			if (err!=nil) {
 				log.Print("fail to atoi")
-				return "0"
+				return fail_str
 			}
 			var bus BUS
 			arr, err := bus.list(idx)
 			if (err!=nil) {
 				log.Print(err)
-				return "0"
+				return fail_str
 			}
 			len := len(arr)
 			bi := make([]bus_info, len)
@@ -154,7 +158,7 @@ func main() {
 			var bus BUS
 			bus.view(int64(id))
 			if bus.Id == 0 {
-				return "0"
+				return fail_str
 			}
 			return struct2json(bus)
 		})
@@ -166,7 +170,7 @@ func main() {
 			bus := bw.make_bus()
 			log.Print(struct2json(bus))
 			bus.write()
-			return "1"
+			return success_str
 		})
 	m.Put("/board/bus/:arg", sessionauth.LoginRequired,
 		func(s sessions.Session, user sessionauth.User, param martini.Params) string {
@@ -176,16 +180,16 @@ func main() {
 			var bus BUS
 			bus.view(int64(id))
 			if bus.Id == 0 {
-				return "0"
+				return fail_str
 			}
 			u := user.(*USER_DB)
 			if bus.WriterId != u.Id {
-				return "0"
+				return fail_str
 			}
 
 			bus.Status = 1
 			bus.update()
-			return "1"
+			return success_str
 		})
 	m.RunOnAddr(":8989")
 }

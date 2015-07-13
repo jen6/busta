@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="login change">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="render import del">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.go" afterPath="$PROJECT_DIR$/src/main.go" />
     </list>
@@ -33,9 +33,11 @@
           <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.13322632">
-                  <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-                  <folding />
+                <state vertical-scroll-proportion="0.5184591">
+                  <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#14#242#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -74,7 +76,7 @@
             <entry file="file://$PROJECT_DIR$/src/struct.go">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+                  <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -668,7 +670,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="list select code fix &#10;calc_limitpage fix" />
     <MESSAGE value="list and struct.go test code delete" />
     <MESSAGE value="db.go reflect un import" />
     <MESSAGE value="url change board/list/idx-&gt;board/buslist/idx&#10;get board/bus/arg(view) added" />
@@ -693,8 +694,9 @@
     <MESSAGE value="profile error fix" />
     <MESSAGE value="profile get method error fix" />
     <MESSAGE value="login change" />
-    <option name="LAST_COMMIT_MESSAGE" value="login change" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="render import del" />
+    <option name="LAST_COMMIT_MESSAGE" value="render import del" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -743,7 +745,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="24" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -782,7 +786,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="18" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -821,7 +827,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -860,7 +868,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -899,7 +909,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -938,7 +950,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -977,7 +991,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,14 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/struct.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api.go">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1094,11 +1102,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/struct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="23" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13322632">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
+        <state vertical-scroll-proportion="0.5184591">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#242#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
