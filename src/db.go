@@ -209,6 +209,7 @@ func make_dbmap() *gorp.DbMap {
 
 func AddTable(dbmap_buf *gorp.DbMap, auto_inc bool, it interface{}, name string) *gorp.TableMap {
 	var table *gorp.TableMap = dbmap_buf.AddTableWithName(it, name).SetKeys(auto_inc, "Id")
+	log.Print("fuck")
 	err := dbmap.CreateTablesIfNotExists()
 	check_err(err, "Create tables failed")
 	return table
