@@ -102,13 +102,13 @@ func (bs *bus_info) transform(bus BUS) {
 	var bus_content, bus_title string
 	if utf8.RuneCountInString(bus.Content) > 30 {
 		bus_content = substring(bus.Content, 60)
-		but_content += string("...")
+		but_content += "..."
 	}else {
 		bus_content = bus.Content
 	}
 	if utf8.RuneCountInString(bus.Title) > 30 {
 		bus_title = substring(bus.Title, 60)
-		but_title += string("...")
+		but_title += "..."
 	} else {
 		bus_title = bus.Title
 	}
