@@ -195,7 +195,7 @@ func main() {
 		})
 	m.Get("/board/songun", func() string {
 		var arr []BUS
-		_, err := dbmap.Select(&arr, "select * from BUSBOARD where Id = 1 order by Created desc")
+		_, err := dbmap.Select(&arr, "select * from BUSBOARD where WriterId = 1 order by Created desc")
 		check_err(err, "error")
 		return struct2json(arr)
 	})
