@@ -35,7 +35,7 @@ func struct2json(it interface{}) string {
 }
 
 func addmysqldata() {
-	ud = newUser("test1", "test1", "박선현")
+	ud := newUser("test1", "test1", "박선현")
 	ud.insert()
 	ud = newUser("test2", "test2", "권욱제")
 	ud.insert()
