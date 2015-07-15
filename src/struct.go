@@ -104,7 +104,7 @@ type bus_info struct {
 func (bs *bus_info) transform(bus BUS) {
 	var bus_content string
 	if len(bus.Content) > 30 {
-		bus_content = bus.Content[0:30]
+		bus_content = substring(bus.Content, 30)
 	} else {
 		bus_content = bus.Content
 	}

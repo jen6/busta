@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"log"
-
+	"fmt"
 )
 
 func init() {
@@ -42,5 +42,18 @@ func addmysqldata() {
 	//	ud = newUser("test3", "test3", "강명서")
 	//	ud.insert()
 }
+
+func substring(s string, len int) string {
+	by := []byte(s)
+
+	if int(by[len - 1]) >= 224 {
+		len += 2
+	} else if int(by[len - 1]) >= 192 && int(by[len - 1]) < 224 {
+		len += 1
+	}
+
+	return s[0:len]
+}
+
 
 type ANY interface{}
