@@ -49,6 +49,7 @@ func substring(s string, len int) string {
 			str += string(c)
 		}
 	}
+	str += string("...")
 	return str
 }
 
