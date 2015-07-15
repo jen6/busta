@@ -100,7 +100,7 @@ type bus_info struct {
 func (bs *bus_info) transform(bus BUS) {
 	var bus_content string
 
-	bus_content = substring(bus.Content, 30)
+	bus_content = substring(bus.Content, 60)
 
 	buf := bus_info{
 		Title: bus.Title,

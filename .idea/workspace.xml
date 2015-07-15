@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="fmt unload">
+    <list default="true" id="8cc69aca-1bb0-4feb-9663-5af736fcc96d" name="Default" comment="substring add">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struct.go" afterPath="$PROJECT_DIR$/src/struct.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util.go" afterPath="$PROJECT_DIR$/src/util.go" />
     </list>
     <ignored path="BUSTA.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,8 +75,8 @@
           <file leaf-file-name="struct.go" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/struct.go">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.58428806">
-                  <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+                <state vertical-scroll-proportion="0.2782324">
+                  <caret line="102" column="42" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="42" />
                   <folding>
                     <element signature="e#13#23#0" expanded="true" />
                   </folding>
@@ -652,7 +651,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="false" />
-    <MESSAGE value="get prorfile/ implemente" />
     <MESSAGE value="portfolio add" />
     <MESSAGE value="portfolio table add" />
     <MESSAGE value="error fix add table add dbmap_buf" />
@@ -677,7 +675,8 @@
     <MESSAGE value="user add 주석처리" />
     <MESSAGE value="substring function add" />
     <MESSAGE value="fmt unload" />
-    <option name="LAST_COMMIT_MESSAGE" value="fmt unload" />
+    <MESSAGE value="substring add" />
+    <option name="LAST_COMMIT_MESSAGE" value="substring add" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1106,8 +1105,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/struct.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58428806">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.2782324">
+          <caret line="102" column="42" selection-start-line="102" selection-start-column="42" selection-end-line="102" selection-end-column="42" />
           <folding>
             <element signature="e#13#23#0" expanded="true" />
           </folding>
