@@ -193,6 +193,12 @@ func main() {
 			bus.update()
 			return success_str
 		})
+	m.Get("/board/songun", func() string {
+		var arr []BUS
+		_, err := dbmap.Select(&arr, "select * from BUSBOARD where Id = 1 order by Created desc")
+		check_err(err, "error")
+		return struct2json(arr)
+	})
 
 	//	m.Get("/board/porfol/:arg", func(param martini.Params) string {
 	//		var buf string = param["arg"]
