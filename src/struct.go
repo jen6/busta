@@ -1,5 +1,6 @@
 package main
 import (
+	"unicode/utf8"
 )
 
 type User_Interface interface {
@@ -98,12 +99,21 @@ type bus_info struct {
 }
 
 func (bs *bus_info) transform(bus BUS) {
-	var bus_content string
-
-	bus_content = substring(bus.Content, 60)
-
+	var bus_content, bus_title string
+	if utf8.RuneCountInString(bus.Content) > 30 {
+		bus_content = substring(bus.Content, 60)
+		but_content += string("...")
+	}else {
+		bus_content = bus.Content
+	}
+	if utf8.RuneCountInString(bus.Title) > 30 {
+		bus_title = substring(bus.Title, 60)
+		but_title += string("...")
+	} else {
+		bus_title = bus.Title
+	}
 	buf := bus_info{
-		Title: bus.Title,
+		Title: bus_title,
 		Id: bus.Id,
 		Content:bus_content,
 		Want: bus.Want,
