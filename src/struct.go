@@ -1,10 +1,6 @@
 package main
-//import (
-//	"mime/multipart"
-//	"hash/crc32"
-//	"os"
-//	"errors"
-//)
+import (
+)
 
 type User_Interface interface {
 	make_user() USER_DB
@@ -103,11 +99,9 @@ type bus_info struct {
 
 func (bs *bus_info) transform(bus BUS) {
 	var bus_content string
-	if len(bus.Content) > 30 {
-		bus_content = substring(bus.Content, 30)
-	} else {
-		bus_content = bus.Content
-	}
+
+	bus_content = substring(bus.Content, 30)
+
 	buf := bus_info{
 		Title: bus.Title,
 		Id: bus.Id,

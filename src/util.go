@@ -43,15 +43,13 @@ func addmysqldata() {
 }
 
 func substring(s string, len int) string {
-	by := []byte(s)
-
-	if int(by[len - 1]) >= 224 {
-		len += 2
-	} else if int(by[len - 1]) >= 192 && int(by[len - 1]) < 224 {
-		len += 1
+	str := ""
+	for i, c := range s {
+		if i < len {
+			str += string(c)
+		}
 	}
-
-	return s[0:len]
+	return str
 }
 
 
